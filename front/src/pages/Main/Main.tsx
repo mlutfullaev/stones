@@ -7,12 +7,12 @@ import Header from "../../layouts/Header/Header";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./main.scss";
-import Statics from "./Statics";
-import Info from "./Info";
-import Events from "./Events";
-import Collection from "./Collection";
-import Advantages from "./Advantages";
-import Projects from "./Projects";
+import Statics from "./Statics/Statics";
+import Info from "./Info/Info";
+import Events from "./Events/Events";
+import Collection from "./Collection/Collection";
+import Advantages from "./Advantages/Advantages";
+import Projects from "./Projects/Projects";
 import Consultation from "../../components/Consultation/Consultation";
 
 const Main = () => {
@@ -22,13 +22,13 @@ const Main = () => {
       <div className="main-bg">
         <Slider {...settings}>
           <div className="main-slide">
-            <img src={mainbg} alt=""/>
+            <div style={{backgroundImage: `url(${mainbg})`}}></div>
           </div>
           <div className="main-slide">
-            <img src={mainbg} alt=""/>
+            <div style={{backgroundImage: `url(${mainbg})`}}></div>
           </div>
           <div className="main-slide">
-            <img src={mainbg} alt=""/>
+            <div style={{backgroundImage: `url(${mainbg})`}}></div>
           </div>
         </Slider>
       </div>
@@ -81,6 +81,8 @@ const settings = {
   vertical: true,
   swipe: false,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
 };
 
 export default Main;

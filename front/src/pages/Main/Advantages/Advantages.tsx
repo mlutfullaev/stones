@@ -1,11 +1,13 @@
 import React from 'react';
-import advantagesStone from '../../assets/img/advantages/advantages-stone.png';
-import advantages1 from '../../assets/img/advantages/advantages-01.png'
-import advantages2 from '../../assets/img/advantages/advantages-02.png'
-import advantages3 from '../../assets/img/advantages/advantages-03.png'
-import advantages4 from '../../assets/img/advantages/advantages-04.png'
-import advantages5 from '../../assets/img/advantages/advantages-05.png'
-import advantages6 from '../../assets/img/advantages/advantages-06.png'
+import advantagesStone from '../../../assets/img/advantages/advantages-stone.png';
+import advantages1 from '../../../assets/img/advantages/advantages-01.png'
+import advantages2 from '../../../assets/img/advantages/advantages-02.png'
+import advantages3 from '../../../assets/img/advantages/advantages-03.png'
+import advantages4 from '../../../assets/img/advantages/advantages-04.png'
+import advantages5 from '../../../assets/img/advantages/advantages-05.png'
+import advantages6 from '../../../assets/img/advantages/advantages-06.png'
+
+import './advantages.scss'
 
 const Advantages = () => {
   return (

@@ -52,9 +52,6 @@ header {
     gap: 20px;
     align-items: center;
     padding: 20px 0;
-    @media screen and (max-width: 1440px){
-      font-size: 14px;
-    }
 
     ul {
       display: flex;
@@ -69,13 +66,18 @@ header {
     .nav-list {
       display: flex;
       gap: 40px;
+      font-size: 18px;
 
       @media screen and (max-width: 1850px){
-        gap: 20px;
+        gap: 15px;
+        font-size: 15px;
       }
     }
     &-items {
       gap: 20px;
+      @media screen and (max-width: 1850px){
+        gap: 15px;
+      }
 
       li {
         display: flex;

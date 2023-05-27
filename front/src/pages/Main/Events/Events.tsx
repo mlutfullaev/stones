@@ -1,6 +1,8 @@
-import React, {MouseEventHandler, useState} from "react";
+import React, {useState} from "react";
 import Slider from "react-slick";
-import eventImg from "../../assets/img/event.png";
+import eventImg from "../../../assets/img/event.png";
+
+import './events.scss';
 
 const Events = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -47,6 +49,7 @@ const Events = () => {
     prevArrow: <PrevSlide />,
     nextArrow: <NextSlide />
   };
+
   return (
     <section className="events">
       <div className="container">

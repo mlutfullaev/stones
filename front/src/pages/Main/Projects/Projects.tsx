@@ -1,13 +1,15 @@
 import React from 'react';
-import projectStone from '../../assets/img/projects/project-stone.png';
-import project1 from '../../assets/img/projects/project1.png';
-import project2 from '../../assets/img/projects/project2.png';
-import project3 from '../../assets/img/projects/project3.png';
-import project4 from '../../assets/img/projects/project4.png';
-import project5 from '../../assets/img/projects/project5.png';
-import project6 from '../../assets/img/projects/project6.png';
-import project7 from '../../assets/img/projects/project7.png';
-import project8 from '../../assets/img/projects/project8.png';
+import projectStone from '../../../assets/img/projects/project-stone.png';
+import project1 from '../../../assets/img/projects/project1.png';
+import project2 from '../../../assets/img/projects/project2.png';
+import project3 from '../../../assets/img/projects/project3.png';
+import project4 from '../../../assets/img/projects/project4.png';
+import project5 from '../../../assets/img/projects/project5.png';
+import project6 from '../../../assets/img/projects/project6.png';
+import project7 from '../../../assets/img/projects/project7.png';
+import project8 from '../../../assets/img/projects/project8.png';
+
+import './projects.scss';
 
 const Projects = () => {
   const projects = [

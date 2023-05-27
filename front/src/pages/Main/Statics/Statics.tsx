@@ -1,16 +1,19 @@
 import React from 'react';
-import stoneLeft from '../../assets/img/stone-left.png'
-import stoneRight from '../../assets/img/store-right.png'
-import staticsImg from '../../assets/img/statics-img.png'
-import staticsBg from '../../assets/img/statics-bg.png'
+import stoneLeft from '../../../assets/img/stone-left.png'
+import stoneRight from '../../../assets/img/store-right.png'
+import staticsImg from '../../../assets/img/statics-img.png'
+import staticsBg from '../../../assets/img/statics-bg.png'
+import staticsTextBg from '../../../assets/img/statics-text-bg.png'
+
+import './statics.scss';
 
 const Statics = () => {
   return (
-    <section className="statics">
+    <section className="statics" style={{backgroundImage: `url(${staticsTextBg})`}}>
       <img src={stoneLeft} className='stone-left' alt=""/>
       <img src={stoneRight} className='stone-right' alt=""/>
       <div className="container">
-        <h1 className="title">СОВРЕМЕННЫЕ СКАЛДСКИЕ КОМПЛЕКСЫ <span>НАТУРАЛЬНОГО КАМНЯ</span></h1>
+        <h1 className="title">СОВРЕМЕННЫЕ СКАЛДСКИЕ КОМПЛЕКСЫ <br/><span>НАТУРАЛЬНОГО КАМНЯ</span></h1>
       </div>
       <div className="statics-inner">
         <div className="statics-img" style={{backgroundImage: `url(${staticsBg})`}}>

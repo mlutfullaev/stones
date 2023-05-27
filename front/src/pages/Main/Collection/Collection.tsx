@@ -1,11 +1,13 @@
 import React, {useRef} from "react";
 import Slider from "react-slick";
-import collection1 from "../../assets/img/collection/collection1.png";
-import collection2 from "../../assets/img/collection/collection2.png";
-import collection3 from "../../assets/img/collection/collection3.png";
-import collection4 from "../../assets/img/collection/collection4.png";
-import collection5 from "../../assets/img/collection/collection5.png";
-import collectionStone from "../../assets/img/collection/collection-stone.png";
+import collection1 from "../../../assets/img/collection/collection1.png";
+import collection2 from "../../../assets/img/collection/collection2.png";
+import collection3 from "../../../assets/img/collection/collection3.png";
+import collection4 from "../../../assets/img/collection/collection4.png";
+import collection5 from "../../../assets/img/collection/collection5.png";
+import collectionStone from "../../../assets/img/collection/collection-stone.png";
+
+import './collection.scss';
 
 const Collection = () => {
   const collections = [
