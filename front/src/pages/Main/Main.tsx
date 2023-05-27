@@ -54,21 +54,21 @@ const Main = () => {
       <Collection/>
       <Advantages/>
       <Projects/>
-      {/*<section className='main-bottom'>*/}
-      {/*  <img src={bottomStone} alt=""/>*/}
-      {/*  <div className="container">*/}
-      {/*    <h1 className="title">ОСТАЛИСЬ ВОПРОСЫ? <br/><span>МЫ ПОМЖЕМ ВАМ!</span></h1>*/}
-      {/*    <div className="inner">*/}
-      {/*      <Consultation/>*/}
-      {/*      <div className="video">*/}
-      {/*        <iframe width="560" height="315" src="https://www.youtube.com/embed/n67dRQihNJ4"*/}
-      {/*                title="YouTube video player" frameBorder="0"*/}
-      {/*                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
-      {/*                allowFullScreen></iframe>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      <section className='main-bottom'>
+        <img src={bottomStone} alt=""/>
+        <div className="container">
+          <h1 className="title">ОСТАЛИСЬ ВОПРОСЫ? <br/><span>МЫ ПОМЖЕМ ВАМ!</span></h1>
+          <div className="inner">
+            <Consultation/>
+            <div className="video">
+              <iframe src="https://www.youtube.com/embed/n67dRQihNJ4"
+                      title="YouTube video player" frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -173,7 +173,7 @@
     }
     .stone-right {
       width: 150px;
-      top: -250px;
+      top: -200px;
       right: 0;
     }
 
@@ -496,6 +496,46 @@
         }
         a {
           width: max-content;
+        }
+      }
+    }
+  }
+
+  .main-bottom {
+    padding: 100px 0 50px;
+    position: relative;
+
+    & > img {
+      position: absolute;
+      right: 0;
+      top: -50px;
+      width: 200px;
+    }
+    .inner {
+      padding: 50px 0 30px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+
+      .video {
+        width: 100%;
+        max-width: 900px;
+        background: #fff;
+        box-shadow: 0 3px 30px rgba(0, 0, 0, .3);
+        height: 450px;
+
+        @media screen and (max-width: 1850px){
+          height: 400px;
+        }
+        @media screen and (max-width: 1440px){
+          max-width: 600px;
+          height: 300px;
+        }
+
+        iframe {
+          width: 100%;
+          height: 100%;
         }
       }
     }

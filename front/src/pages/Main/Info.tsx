@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
-import infoBg from "../../assets/img/infobg.png";
+import infoBg from "../../assets/img/info/infobg.png";
 import Slider from "react-slick";
-import info1 from "../../assets/img/info.png";
+import info1 from "../../assets/img/info/info.png";
 
 const Info = () => {
   const infoSlides = [info1,info1,info1]

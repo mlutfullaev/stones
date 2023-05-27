@@ -1,13 +1,13 @@
 import React from 'react';
-import projectStone from '../../assets/img/project-stone.png';
-import project1 from '../../assets/img/project1.png';
-import project2 from '../../assets/img/project2.png';
-import project3 from '../../assets/img/project3.png';
-import project4 from '../../assets/img/project4.png';
-import project5 from '../../assets/img/project5.png';
-import project6 from '../../assets/img/project6.png';
-import project7 from '../../assets/img/project7.png';
-import project8 from '../../assets/img/project8.png';
+import projectStone from '../../assets/img/projects/project-stone.png';
+import project1 from '../../assets/img/projects/project1.png';
+import project2 from '../../assets/img/projects/project2.png';
+import project3 from '../../assets/img/projects/project3.png';
+import project4 from '../../assets/img/projects/project4.png';
+import project5 from '../../assets/img/projects/project5.png';
+import project6 from '../../assets/img/projects/project6.png';
+import project7 from '../../assets/img/projects/project7.png';
+import project8 from '../../assets/img/projects/project8.png';
 
 const Projects = () => {
   const projects = [
@@ -58,8 +58,8 @@ const Projects = () => {
       <div className="container">
         <h1 className="title">Проекты с натуральным камнем</h1>
         <div className="projects-inner">
-          {projects.map(project =>
-            <div className="project" style={{backgroundImage: `url(${project.img})`}}>
+          {projects.map((project, i) =>
+            <div key={i} className="project" style={{backgroundImage: `url(${project.img})`}}>
               <div className="project-bg"></div>
               <h3>{project.name}</h3>
               <a className="btn" href={project.link}>Подробнее</a>
