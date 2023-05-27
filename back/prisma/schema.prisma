@@ -10,10 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Stone {
-  id    Int @id @default(autoincrement())
-  title String
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt()
+  id        Int      @id @default(autoincrement())
+  title     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
 }
+
