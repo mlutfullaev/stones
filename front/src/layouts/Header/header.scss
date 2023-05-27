@@ -95,11 +95,26 @@ header {
           margin-right: 10px;
         }
       }
-      .desktop-items {
-
-        @media screen and (max-width: 1300px){
-          display: none;
-        }
+    }
+    @media screen and (max-width: 1300px){
+      .header-currency {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 1200px){
+      .header-contacts {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 950px){
+      .header-nav {
+        display: none;
+      }
+      .header-currency {
+        display: block;
+      }
+      .header-contacts {
+        display: block;
       }
     }
   }

@@ -21,27 +21,29 @@ const Footer = () => {
                 fill="white"/>
             </svg>
           </a>
-          <div className="footer-item">
-            <h3>КОМПАНИЯ</h3>
-            <a href="#">О нас</a>
-            <a href="">Видео</a>
-            <a href="#">Производство</a>
-            <a href="#">Новости</a>
-          </div>
-          <div className="footer-item">
-            <h3>Услуги</h3>
-            <a href="#">Поставка натурального камня</a>
-            <a href="">Изготовление изделий</a>
-            <a href="#">Монтаж</a>
-            <a href="#">Реставрация</a>
-          </div>
-          <div className="footer-item">
-            <h3>Галеря камня</h3>
-            <a href="#">Мрамор</a>
-            <a href="">Оникс</a>
-            <a href="#">Травертин</a>
-            <a href="#">Мозаика</a>
-          </div>
+          <nav className="footer-nav">
+            <div className="nav-item">
+              <h3>КОМПАНИЯ</h3>
+              <a href="#">О нас</a>
+              <a href="">Видео</a>
+              <a href="#">Производство</a>
+              <a href="#">Новости</a>
+            </div>
+            <div className="nav-item">
+              <h3>Услуги</h3>
+              <a href="#">Поставка натурального камня</a>
+              <a href="">Изготовление изделий</a>
+              <a href="#">Монтаж</a>
+              <a href="#">Реставрация</a>
+            </div>
+            <div className="nav-item">
+              <h3>Галеря камня</h3>
+              <a href="#">Мрамор</a>
+              <a href="">Оникс</a>
+              <a href="#">Травертин</a>
+              <a href="#">Мозаика</a>
+            </div>
+          </nav>
           <div className="footer-item">
             <a href="tel:+88124080712">
               <svg className="phone" width="19" height="19" viewBox="0 0 19 19" fill="none"

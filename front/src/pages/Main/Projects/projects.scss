@@ -41,6 +41,9 @@
       @media screen and (max-width: 1300px){
         height: 300px;
       }
+      @media screen and (max-width: 1024px){
+        height: 250px;
+      }
       &-bg {
         position: absolute;
         width: 100%;
@@ -56,6 +59,10 @@
         font-weight: 700;
         color: #fff;
         z-index: 3;
+
+        @media screen and (max-width: 1024px){
+          font-size: 24px;
+        }
       }
       a {
         width: max-content;

@@ -12,10 +12,10 @@ const HeaderItems = () => {
           </svg>
         </button>
       </li>
-      <li>
+      <li className='header-burger'>
         <button className="burger"><span></span></button>
       </li>
-      <li className='desktop-items'>
+      <li className='header-contacts'>
         <a href="tel:+88124080712">
           <svg className="phone" width="19" height="19" viewBox="0 0 19 19" fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ const HeaderItems = () => {
           </svg>
           info@vkamne.com</a>
       </li>
-      <li className='desktop-items'>
+      <li className='header-currency'>
         <p>
           <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd"

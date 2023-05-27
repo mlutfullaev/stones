@@ -36,6 +36,9 @@
       width: 170px;
       top: -150px;
     }
+    @media screen and (max-width: 1200px){
+      width: 130px;
+    }
   }
 
   &-inner {
