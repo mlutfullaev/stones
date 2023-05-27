@@ -1,0 +1,121 @@
+header {
+
+  .burger {
+    cursor: pointer;
+    padding: 12px 0;
+    color: inherit;
+
+    span {
+      position: relative;
+      display: flex;
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      color: inherit;
+      transition: all .2s ease-in-out;
+
+      &:before, &:after {
+        position: absolute;
+        background: currentColor;
+        color: inherit;
+        content: '';
+        width: 22px;
+        height: 2px;
+        transition: all .2s ease-in-out;
+      }
+
+      &:before {
+        top: -8px;
+      }
+
+      &:after {
+        top: 8px;
+      }
+    }
+    &.active {
+      span {
+        background: transparent;
+
+        &:before {
+          transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        &:after {
+          transform: rotate(-45deg) translate(5px, -6px);
+        }
+      }
+    }
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    @media screen and (max-width: 1440px){
+      font-size: 14px;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+    .logo svg {
+      @media screen and (max-width: 1850px){
+        width: 150px;
+      }
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 40px;
+
+      @media screen and (max-width: 1850px){
+        gap: 20px;
+      }
+    }
+    &-items {
+      gap: 20px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 5px;
+
+        p, a {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+        }
+        svg {
+          margin-right: 10px;
+        }
+      }
+      .desktop-items {
+
+        @media screen and (max-width: 1300px){
+          display: none;
+        }
+      }
+    }
+  }
+
+  button {
+    color: inherit;
+  }
+  svg.search {
+    stroke: currentColor;
+    fill: currentColor;
+    color: inherit;
+  }
+  svg.phone {
+    stroke: currentColor;
+    color: inherit;
+  }
+  svg.email {
+    //stroke: currentColor;
+    color: inherit;
+  }
+}
