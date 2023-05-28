@@ -1,1 +1,1 @@
-export {}
+export type ProjectT = {img: HTMLImageElement, name: string, link: string}
