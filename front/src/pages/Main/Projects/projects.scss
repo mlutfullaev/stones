@@ -1,0 +1,82 @@
+.projects {
+  padding: 50px 0;
+  position: relative;
+  background: #F5F5F5;
+
+  & > img {
+    position: absolute;
+    right: 0;
+    top: -140px;
+    width: 180px;
+
+    @media screen and (max-width: 1400px) {
+      top: -100px;
+      width: 120px;
+    }
+    @media screen and (max-width: 850px) {
+      top: -130px;
+      width: 100px;
+    }
+  }
+
+  &-inner {
+    display: grid;
+    grid-template-columns: (1fr 1fr);
+    gap: 20px;
+    padding: 50px 0 30px;
+
+    @media screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+    .project {
+      position: relative;
+      padding: 20px;
+      transition: .3s;
+      display: flex;
+      justify-content: end;
+      flex-direction: column;
+      border-radius: 3px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 450px;
+
+      @media screen and (max-width: 1440px){
+        height: 350px;
+      }
+      @media screen and (max-width: 1300px){
+        height: 300px;
+      }
+      @media screen and (max-width: 1024px){
+        height: 250px;
+      }
+      @media screen and (max-width: 650px){
+        height: 300px;
+      }
+      &-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 5.37%, rgba(0, 0, 0, 0) 27.93%);
+      }
+
+      h3 {
+        padding-bottom: 20px;
+        font-size: 28px;
+        font-weight: 700;
+        color: #fff;
+        z-index: 3;
+
+        @media screen and (max-width: 1024px){
+          font-size: 24px;
+        }
+      }
+      a {
+        width: max-content;
+      }
+    }
+  }
+}

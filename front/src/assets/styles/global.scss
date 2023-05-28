@@ -30,10 +30,10 @@ button {
   padding: 0 20px;
 
   @media screen and (max-width: 1850px){
-    max-width: 1300px;
+    max-width: 1400px;
   }
   @media screen and (max-width: 1440px){
-    max-width: 1200px;
+    max-width: 1230px;
   }
   @media screen and (max-width: 1300px){
     max-width: 1050px;
@@ -94,6 +94,9 @@ button {
 
   @media screen and (max-width: 1440px) {
     font-size: 34px;
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 28px;
   }
 }
 .text {
