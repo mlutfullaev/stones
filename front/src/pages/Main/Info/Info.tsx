@@ -78,7 +78,15 @@ const infoSettings = {
   slidesToShow: 2,
   speed: 500,
   arrows: false,
-
+  responsive: [
+    {
+      breakpoint: 470,
+      settings: {
+        slidesToShow: 1,
+        centerPadding: '20px'
+      }
+    },
+  ]
 };
 
 export default Info;

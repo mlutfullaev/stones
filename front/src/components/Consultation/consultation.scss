@@ -33,6 +33,9 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 380px) {
+      max-width: 260px;
+    }
 
     label {
       font-weight: 400;
@@ -60,6 +63,10 @@
       min-width: 300px;
       max-height: 300px;
       min-height: 100px;
+
+      @media screen and (max-width: 400px) {
+        min-width: 240px;
+      }
     }
     button {
       max-width: 300px;

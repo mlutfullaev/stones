@@ -20,6 +20,9 @@
     @media screen and (max-width: 1200px) {
       padding: 20px 0 20px 40px;
     }
+    @media screen and (max-width: 1000px) {
+      padding: 20px 20px 40px;
+    }
     .text {
       padding: 20px 0;
     }
@@ -42,19 +45,27 @@
       @media screen and (max-width: 1000px) {
         width: 600px
       }
+      @media screen and (max-width: 650px) {
+        width: 400px
+      }
+      @media screen and (max-width: 470px) {
+        max-width: 300px;
+      }
+
       .slick-list {
         padding: 0 80px 0 0 !important;
 
-        @media screen and (max-width: 1440px){
+        @media screen and (max-width: 1440px) {
           padding: 0 30px 0 0 !important;
         }
       }
-      @media screen and (max-width: 1850px){
+
+      @media screen and (max-width: 1850px) {
         .slick-slide img {
           width: 250px;
         }
       }
-      @media screen and (max-width: 1440px){
+      @media screen and (max-width: 1440px) {
         .slick-slide img {
           width: 230px;
         }
@@ -67,6 +78,16 @@
       @media screen and (max-width: 1000px) {
         .slick-slide img {
           width: 220px;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        .slick-slide img {
+          width: 140px;
+        }
+      }
+      @media screen and (max-width: 470px) {
+        .slick-slide img {
+          width: 90%;
         }
       }
     }

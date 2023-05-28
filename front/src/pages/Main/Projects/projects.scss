@@ -9,9 +9,13 @@
     top: -140px;
     width: 180px;
 
-    @media screen and (max-width: 1400px){
+    @media screen and (max-width: 1400px) {
       top: -100px;
       width: 120px;
+    }
+    @media screen and (max-width: 850px) {
+      top: -130px;
+      width: 100px;
     }
   }
 
@@ -21,6 +25,9 @@
     gap: 20px;
     padding: 50px 0 30px;
 
+    @media screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
     .project {
       position: relative;
       padding: 20px;
@@ -43,6 +50,9 @@
       }
       @media screen and (max-width: 1024px){
         height: 250px;
+      }
+      @media screen and (max-width: 650px){
+        height: 300px;
       }
       &-bg {
         position: absolute;

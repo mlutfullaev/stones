@@ -17,6 +17,13 @@
       width: 150px;
       top: -100px;
     }
+    @media screen and (max-width: 768px){
+      top: -170px;
+    }
+    @media screen and (max-width: 470px){
+      top: -110px;
+      width: 100px;
+    }
   }
   h1 {
     padding-bottom: 30px;
@@ -41,6 +48,9 @@
         }
         @media screen and (max-width: 1024px){
           height: 220px;
+        }
+        @media screen and (max-width: 650px){
+          height: 170px;
         }
       }
       p {

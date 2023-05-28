@@ -117,6 +117,14 @@ header {
         display: block;
       }
     }
+    @media screen and (max-width: 600px){
+      .header-currency {
+        display: none;
+      }
+      .header-contacts {
+        display: none;
+      }
+    }
   }
 
   button {

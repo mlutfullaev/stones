@@ -5,6 +5,10 @@
   background-position: right center;
   background-repeat: no-repeat;
 
+  @media screen and (max-width: 768px) {
+    padding-bottom: 0;
+  }
+
   @media screen and (max-width: 1440px){
     background-size: 43%;
   }
@@ -21,6 +25,10 @@
     @media screen and (max-width: 1440px){
       width: 100px;
       top: -60px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 90px;
+      top: -100px;
     }
   }
   .stone-right {
@@ -39,6 +47,9 @@
     @media screen and (max-width: 1200px){
       width: 130px;
     }
+    @media screen and (max-width: 768px) {
+      width: 100px;
+    }
   }
 
   &-inner {
@@ -49,6 +60,10 @@
     @media screen and (max-width: 1440px){
       gap: 5%;
     }
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+      gap: 30px;
+    }
 
     .statics-img {
       padding: 50px;
@@ -57,6 +72,15 @@
       background-size: cover;
       width: 55%;
 
+      @media screen and (max-width: 1024px){
+        flex-grow: 1;
+        padding: 20px;
+        padding-left: 0;
+      }
+      @media screen and (max-width: 768px){
+        width: 100%;
+        padding: 20px;
+      }
       img {
         width: 100%;
       }
@@ -64,6 +88,14 @@
     .statics-text {
       width: 40%;
       padding-right: 80px;
+
+      @media screen and (max-width: 1024px){
+        padding-right: 50px;
+      }
+      @media screen and (max-width: 768px){
+        width: 100%;
+        padding: 20px;
+      }
 
       h3 {
         font-size: 65px;

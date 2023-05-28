@@ -15,6 +15,11 @@ footer {
       justify-content: space-between;
       gap: 20px;
 
+      @media screen and (max-width: 400px) {
+        flex-direction: column;
+        padding-top: 30px;
+      }
+
       .nav-item {
         padding-top: 20px;
         display: flex;

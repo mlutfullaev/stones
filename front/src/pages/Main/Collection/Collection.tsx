@@ -42,6 +42,20 @@ const Collection = () => {
     slidesToShow: 3,
     speed: 500,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 470,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ]
   };
 
   return (

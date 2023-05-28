@@ -107,6 +107,14 @@
       right: 0;
       top: -50px;
       width: 200px;
+
+      @media screen and (max-width: 1024px){
+        width: 150px;
+      }
+      @media screen and (max-width: 768px){
+        width: 120px;
+        top: -70px;
+      }
     }
     .inner {
       padding: 50px 0 30px;
@@ -114,6 +122,9 @@
       gap: 40px;
       align-items: center;
       justify-content: space-between;
+      @media screen and (max-width: 850px){
+        flex-direction: column-reverse;
+      }
 
       .video {
         width: 100%;
@@ -128,6 +139,9 @@
         @media screen and (max-width: 1440px){
           max-width: 600px;
           height: 300px;
+        }
+        @media screen and (max-width: 550px){
+          height: 200px;
         }
 
         iframe {
