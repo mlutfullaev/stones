@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const HeaderNav = () => {
   return (
     <nav className="header-nav">
       <ul className='nav-list'>
         <li className='nav-item'>
-          <a href="#">Главная</a>
+          <Link to='/'>Главная</Link>
         </li>
         <li className='nav-item'>
           <a href="#">О компании</a>
@@ -14,7 +15,7 @@ const HeaderNav = () => {
           <a href="#">Новости</a>
         </li>
         <li className='nav-item'>
-          <a href="#">Услуги</a>
+          <Link to='/services'>Услуги</Link>
         </li>
         <li className='nav-item'>
           <a href="#">Портфолио</a>
