@@ -15,14 +15,34 @@
       align-items: center;
       justify-content: center;
 
+      @media screen and (max-width: 768px){
+        flex-wrap: wrap;
+      }
+
       .info-text {
+        width: 50%;
         display: flex;
         gap: 20px;
         flex-direction: column;
 
+        @media screen and (max-width: 768px){
+          width: 100%;
+        }
         .info-item {
           display: flex;
           align-items: center;
+          gap: 20px;
+          row-gap: 10px;
+
+          @media screen and (max-width: 900px){
+            flex-wrap: wrap;
+          }
+          @media screen and (max-width: 768px){
+            flex-wrap: nowrap;
+          }
+          @media screen and (max-width: 600px){
+            flex-wrap: wrap;
+          }
 
           p {
             font-weight: 600;
@@ -30,21 +50,48 @@
           }
 
           svg {
-            width: 30px;
-            margin-right: 20px;
+            flex-basis: 40px;
           }
 
           a {
             font-weight: 400;
-            padding-left: 20px;
             color: #454545;
+
+            @media screen and (max-width: 900px){
+              width: 100%;
+            }
+            @media screen and (max-width: 768px){
+              width: max-content;
+            }
+            @media screen and (max-width: 768px){
+              width: 100%;
+            }
           }
           &:last-child {
             display: block;
+
+            & > div {
+              display: flex;
+              gap: 20px;
+
+              a {
+                width: max-content;
+              }
+            }
             p {
               padding-bottom: 10px;
             }
           }
+        }
+      }
+      .info-map {
+        width: 50%;
+
+        @media screen and (max-width: 768px){
+          width: 100%;
+        }
+        iframe {
+          width: 100%;
         }
       }
     }
@@ -52,13 +99,25 @@
 
   .contacts-bottom {
     position: relative;
-    padding: 30px 0 80px;
+    padding: 50px 0 80px;
+
+    @media screen and (max-width: 768px){
+      padding: 80px 0 100px;
+    }
 
     .contacts-left {
       position: absolute;
       top: -240px;
       width: 80px;
       left: 0;
+
+      @media screen and (max-width: 1440px){
+        top: -120px;
+        width: 50px
+      }
+      @media screen and (max-width: 768px){
+        top: -80px;
+      }
     }
     .contacts-right {
       position: absolute;
@@ -68,6 +127,13 @@
 
       @media screen and (max-width: 1300px) {
         width: 160px;
+      }
+      @media screen and (max-width: 768px){
+        width: 100px;
+        bottom: -20px;
+      }
+      @media screen and (max-width: 450px){
+        width: 80px;
       }
     }
   }
