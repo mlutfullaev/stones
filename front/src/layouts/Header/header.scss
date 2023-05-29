@@ -1,4 +1,5 @@
 header {
+  color: #000;
 
   .burger {
     cursor: pointer;
@@ -117,7 +118,7 @@ header {
         display: block;
       }
     }
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 650px){
       .header-currency {
         display: none;
       }
@@ -141,6 +142,7 @@ header {
   }
   svg.email {
     //stroke: currentColor;
+    fill: currentColor;
     color: inherit;
   }
 }
