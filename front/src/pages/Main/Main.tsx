@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import {ProjectT} from "../../@types";
-import logoWhite from '../../assets/img/logo-white.svg'
 import bottomStone from "../../assets/img/bottom-stone.png";
 import mainbg from "../../assets/img/main-bg.png";
 import projectStone from '../../assets/img/projects/project-stone.png';
@@ -87,7 +86,7 @@ const Main = () => {
           </div>
         </Slider>
       </div>
-      <Header logo={logoWhite}/>
+      <Header logo={'white'}/>
       <main>
         <div className="container">
           <h1 className="main-title">Современная эстетика, воплощенна в камне...</h1>

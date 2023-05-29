@@ -1,4 +1,5 @@
 header {
+  color: #000;
 
   .burger {
     cursor: pointer;
@@ -141,6 +142,7 @@ header {
   }
   svg.email {
     //stroke: currentColor;
+    fill: currentColor;
     color: inherit;
   }
 }

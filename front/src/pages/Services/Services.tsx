@@ -2,7 +2,6 @@ import React from 'react';
 import Header from "../../layouts/Header/Header";
 import Projects from "../../components/Projects/Projects";
 import {ProjectT} from "../../@types";
-import logoGrey from '../../assets/img/logo-grey.svg'
 import service1 from '../../assets/img/services/services1.png';
 import service2 from '../../assets/img/services/services2.png';
 import service3 from '../../assets/img/services/services3.png';
@@ -118,7 +117,7 @@ const services: ProjectT[] = [
 const Services = () => {
   return (
     <div>
-      <Header logo={logoGrey} />
+      <Header />
       <Projects projects={services}>
         <h1 className="title">Услуги</h1>
         <div style={{marginTop: 20}}>
