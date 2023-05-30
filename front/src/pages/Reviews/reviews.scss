@@ -1,0 +1,80 @@
+.reviews {
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 50px 0;
+
+    @media screen and (max-width: 680px) {
+      grid-template-columns: 1fr;
+    }
+    .review {
+      background: #FFFFFF;
+      box-shadow: 0 4px 64px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      color: #454545;
+
+      .review-top {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        > div {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          @media screen and (max-width: 1300px) {
+            flex-direction: column;
+            align-items: start;
+            gap: 10px;
+          }
+
+          @media screen and (max-width: 500px) {
+            .rate {
+              display: none;
+            }
+          }
+        }
+        h3 {
+          font-size: 36px;
+          font-weight: 600;
+
+          @media screen and (max-width: 780px) {
+            font-size: 30px;
+          }
+        }
+
+        @media screen and (max-width: 780px) {
+          img {
+            width: 70px;
+          }
+        }
+      }
+      h4 {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 10px 0;
+      }
+      p {
+        font-size: 19px;
+        font-weight: 500;
+        padding: 20px 0;
+
+        @media screen and (max-width: 780px) {
+          font-size: 16px;
+        }
+
+        &.date {
+          font-size: 16px;
+          color: #2E303D70;
+          padding: 0;
+
+          @media screen and (max-width: 780px) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

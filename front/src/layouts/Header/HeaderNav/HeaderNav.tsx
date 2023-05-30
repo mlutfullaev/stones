@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+import './headerNav.scss'
+
 const HeaderNav = () => {
   return (
     <nav className="header-nav">
@@ -12,7 +14,7 @@ const HeaderNav = () => {
           <a href="#">О компании</a>
         </li>
         <li className='nav-item'>
-          <a href="#">Новости</a>
+          <Link to="/blog">Новости</Link>
         </li>
         <li className='nav-item'>
           <Link to='/services'>Услуги</Link>

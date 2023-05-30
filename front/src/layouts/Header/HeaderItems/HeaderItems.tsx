@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const HeaderItems = () => {
+import './headerItems.scss'
+
+type HeaderItemsT = {
+  burger: boolean,
+  setBurger: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const HeaderItems: React.FC<HeaderItemsT> = ({burger, setBurger}) => {
   return (
     <ul className="header-items">
       <li>
@@ -13,7 +20,10 @@ const HeaderItems = () => {
         </button>
       </li>
       <li className='header-burger'>
-        <button className="burger"><span></span></button>
+        <button className={`burger${burger ? ' active' : ''}`}
+                onClick={() => setBurger(oldBurger => !oldBurger)}>
+          <span></span>
+        </button>
       </li>
       <li className='header-contacts'>
         <a href="tel:+88124080712">
