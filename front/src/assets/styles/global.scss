@@ -119,3 +119,12 @@ button {
     font-size: 15px;
   }
 }
+.date {
+  font-size: 16px;
+  color: #2E303D70;
+  padding: 0;
+
+  @media screen and (max-width: 780px) {
+    font-size: 15px;
+  }
+}

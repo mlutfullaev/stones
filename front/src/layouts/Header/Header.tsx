@@ -12,7 +12,11 @@ const Header = ({logo}: {logo?: string}) => {
   const [burger, setBurger] = useState<boolean>(false);
 
   useEffect(() => {
-    document.body.classList.toggle('menu-active')
+    if (burger) {
+      document.body.classList.add('menu-active')
+    } else {
+      document.body.classList.remove('menu-active')
+    }
     const burgerCloser = (e: MouseEvent) => {
       const target = e.target as HTMLDivElement;
 
