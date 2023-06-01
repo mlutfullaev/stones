@@ -1,51 +1,6 @@
 header {
+  color: #000;
 
-  .burger {
-    cursor: pointer;
-    padding: 12px 0;
-    color: inherit;
-
-    span {
-      position: relative;
-      display: flex;
-      width: 22px;
-      height: 2px;
-      background: currentColor;
-      color: inherit;
-      transition: all .2s ease-in-out;
-
-      &:before, &:after {
-        position: absolute;
-        background: currentColor;
-        color: inherit;
-        content: '';
-        width: 22px;
-        height: 2px;
-        transition: all .2s ease-in-out;
-      }
-
-      &:before {
-        top: -8px;
-      }
-
-      &:after {
-        top: 8px;
-      }
-    }
-    &.active {
-      span {
-        background: transparent;
-
-        &:before {
-          transform: rotate(45deg) translate(5px, 6px);
-        }
-
-        &:after {
-          transform: rotate(-45deg) translate(5px, -6px);
-        }
-      }
-    }
-  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -57,90 +12,13 @@ header {
       display: flex;
       list-style-type: none;
     }
-    .logo svg {
+    .logo img {
       @media screen and (max-width: 1850px){
         width: 150px;
       }
     }
-
-    .nav-list {
-      display: flex;
-      gap: 40px;
-      font-size: 18px;
-
-      @media screen and (max-width: 1850px){
-        gap: 15px;
-        font-size: 15px;
-      }
-    }
-    &-items {
-      gap: 20px;
-      @media screen and (max-width: 1850px){
-        gap: 15px;
-      }
-
-      li {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        gap: 5px;
-
-        p, a {
-          display: flex;
-          align-items: center;
-          justify-content: start;
-        }
-        svg {
-          margin-right: 10px;
-        }
-      }
-    }
-    @media screen and (max-width: 1300px){
-      .header-currency {
-        display: none;
-      }
-    }
-    @media screen and (max-width: 1200px){
-      .header-contacts {
-        display: none;
-      }
-    }
-    @media screen and (max-width: 950px){
-      .header-nav {
-        display: none;
-      }
-      .header-currency {
-        display: block;
-      }
-      .header-contacts {
-        display: block;
-      }
-    }
-    @media screen and (max-width: 600px){
-      .header-currency {
-        display: none;
-      }
-      .header-contacts {
-        display: none;
-      }
-    }
   }
-
   button {
-    color: inherit;
-  }
-  svg.search {
-    stroke: currentColor;
-    fill: currentColor;
-    color: inherit;
-  }
-  svg.phone {
-    stroke: currentColor;
-    color: inherit;
-  }
-  svg.email {
-    //stroke: currentColor;
     color: inherit;
   }
 }

@@ -1,5 +1,9 @@
 body {
   font-family: 'Montserrat', sans-serif;
+
+  &.menu-active {
+    overflow: hidden;
+  }
 }
 * {
   margin: 0;
@@ -80,6 +84,14 @@ button {
     border: none;
     background: #444;
   }
+  &.grey-outline {
+    border-color: #444444;
+    color: #444444;
+
+    &:after {
+      border-color: #444;
+    }
+  }
 }
 .title {
   font-size: 45px;
@@ -104,6 +116,15 @@ button {
   font-weight: 500;
 
   @media screen and (max-width: 1440px){
+    font-size: 15px;
+  }
+}
+.date {
+  font-size: 16px;
+  color: #2E303D70;
+  padding: 0;
+
+  @media screen and (max-width: 780px) {
     font-size: 15px;
   }
 }

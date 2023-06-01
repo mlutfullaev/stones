@@ -1,19 +1,73 @@
 import React from "react";
 import Slider from "react-slick";
-import mainbg from "../../assets/img/main-bg.png";
+import {ProjectT} from "../../@types";
 import bottomStone from "../../assets/img/bottom-stone.png";
-import Header from "../../layouts/Header/Header";
+import mainbg from "../../assets/img/main-bg.png";
+import projectStone from '../../assets/img/projects/project-stone.png';
+import project1 from "../../assets/img/projects/project1.png";
+import project2 from "../../assets/img/projects/project2.png";
+import project3 from "../../assets/img/projects/project3.png";
+import project4 from "../../assets/img/projects/project4.png";
+import project5 from "../../assets/img/projects/project5.png";
+import project6 from "../../assets/img/projects/project6.png";
+import project7 from "../../assets/img/projects/project7.png";
+import project8 from "../../assets/img/projects/project8.png";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./main.scss";
+import Header from "../../layouts/Header/Header";
 import Statics from "./Statics/Statics";
 import Info from "./Info/Info";
 import Events from "./Events/Events";
 import Collection from "./Collection/Collection";
 import Advantages from "./Advantages/Advantages";
-import Projects from "./Projects/Projects";
+import Projects from "../../components/Projects/Projects";
 import Consultation from "../../components/Consultation/Consultation";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./main.scss";
+
+const projects: ProjectT[] = [
+  {
+    img: project1,
+    name: 'Квартира в Сантк-Петербурге',
+    link: '#'
+  },
+  {
+    img: project2,
+    name: 'Студия интерьера и дизайна  Ganga Gallery',
+    link: '#'
+  },
+  {
+    img: project3,
+    name: 'Уборная в отеле',
+    link: '#'
+  },
+  {
+    img: project4,
+    name: 'Частный дом в СПБ',
+    link: '#'
+  },
+  {
+    img: project5,
+    name: 'Столешницы из камня',
+    link: '#'
+  },
+  {
+    img: project6,
+    name: 'Ступени из гранита',
+    link: '#'
+  },
+  {
+    img: project7,
+    name: 'Подоконники из мрамора',
+    link: '#'
+  },
+  {
+    img: project8,
+    name: 'Балясины',
+    link: '#'
+  },
+]
 
 const Main = () => {
 
@@ -32,7 +86,7 @@ const Main = () => {
           </div>
         </Slider>
       </div>
-      <Header/>
+      <Header logo={'white'}/>
       <main>
         <div className="container">
           <h1 className="main-title">Современная эстетика, воплощенна в камне...</h1>
@@ -53,7 +107,10 @@ const Main = () => {
       <Events/>
       <Collection/>
       <Advantages/>
-      <Projects/>
+      <Projects projects={projects}>
+        <img className='stone-bg' src={projectStone} alt=""/>
+        <h1 className="title">Проекты с натуральным камнем</h1>
+      </ Projects>
       <section className='main-bottom'>
         <img src={bottomStone} alt=""/>
         <div className="container">
