@@ -26,9 +26,34 @@ model Reviews {
   updatedAt DateTime @updatedAt()
 }
 
-model services {
-  id           Int    @id @default(autoincrement())
-  title        String
+model Services {
+  id           Int            @id @default(autoincrement())
+  title        String         @unique
   serviceTitle String
-  info         String
+  info         String         @db.Text
+  uploadedFile UploadedFile[]
+}
+
+model UploadedFile {
+  id           Int      @id @default(autoincrement())
+  fieldname    String
+  originalname String
+  encoding     String
+  mimetype     String
+  destination  String
+  filename     String   @unique
+  path         String
+  size         Int
+  createdAt    DateTime @default(now())
+
+  updatedAt    DateTime  @updatedAt()
+  deletedAt    DateTime?
+  services     Services? @relation(fields: [serviceTitle], references: [title], onDelete: Cascade)
+  serviceTitle String?
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
 }
