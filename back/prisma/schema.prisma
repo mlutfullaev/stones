@@ -34,6 +34,12 @@ model Services {
   uploadedFile UploadedFile[]
 }
 
+model Circlestone {
+  id           Int            @id @default(autoincrement())
+  page         String
+  uploadedFile UploadedFile[]
+}
+
 model UploadedFile {
   id           Int      @id @default(autoincrement())
   fieldname    String
@@ -46,10 +52,12 @@ model UploadedFile {
   size         Int
   createdAt    DateTime @default(now())
 
-  updatedAt    DateTime  @updatedAt()
-  deletedAt    DateTime?
-  services     Services? @relation(fields: [serviceTitle], references: [title], onDelete: Cascade)
-  serviceTitle String?
+  updatedAt     DateTime     @updatedAt()
+  deletedAt     DateTime?
+  services      Services?    @relation(fields: [serviceTitle], references: [title], onDelete: Cascade)
+  serviceTitle  String?
+  circlestone   Circlestone? @relation(fields: [circlestoneId], references: [id])
+  circlestoneId Int?
 }
 
 model User {
