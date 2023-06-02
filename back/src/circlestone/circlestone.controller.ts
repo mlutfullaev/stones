@@ -1,13 +1,24 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+} from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { CirclestoneService } from './circlestone.service';
 import { CreateCirclestoneDto } from './dto/create-circlestone.dto';
 import { UpdateCirclestoneDto } from './dto/update-circlestone.dto';
 
 @Controller('circlestone')
 export class CirclestoneController {
-  constructor(private readonly circlestoneService: CirclestoneService) {}
+  constructor(private readonly circlestoneService: CirclestoneService) { }
 
   @Post()
+  @UseGuards(JwtAuthGuard)
   create(@Body() createCirclestoneDto: CreateCirclestoneDto) {
     return this.circlestoneService.create(createCirclestoneDto);
   }
@@ -23,11 +34,16 @@ export class CirclestoneController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCirclestoneDto: UpdateCirclestoneDto) {
+  @UseGuards(JwtAuthGuard)
+  update(
+    @Param('id') id: string,
+    @Body() updateCirclestoneDto: UpdateCirclestoneDto,
+  ) {
     return this.circlestoneService.update(+id, updateCirclestoneDto);
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
   remove(@Param('id') id: string) {
     return this.circlestoneService.remove(+id);
   }
