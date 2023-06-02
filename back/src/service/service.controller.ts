@@ -24,7 +24,6 @@ export class ServiceController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.serviceService.findAll();
   }
