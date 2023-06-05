@@ -1,0 +1,19 @@
+.product-page {
+  position: relative;
+
+  .product-inner {
+    padding: 20px 0;
+    .subtitle {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+      padding-bottom: 20px;
+    }
+
+    .product-content {
+      padding: 20px 0;
+      display: flex;
+      width: 100%;
+    }
+  }
+}

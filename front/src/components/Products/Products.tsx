@@ -16,7 +16,7 @@ const Products: React.FC<ProductsT> = ({products}) => {
     <div className='product-list'>
       {products.map((product, i) => (
         <div key={i} className="product">
-          <Link to='/product/id'>
+          <Link to='/product/12'>
             <img src={product.img} alt="product"/>
             <h3>{product.title}</h3>
             <p>{product.type}</p>
