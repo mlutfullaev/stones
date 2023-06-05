@@ -1,0 +1,95 @@
+.filter {
+  height: max-content;
+  position: relative;
+  padding: 40px 20px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  input[type="checkbox"] {
+    accent-color: #000;
+  }
+  > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @media screen and (max-width: 1850px){
+      width: 100px;
+    }
+  }
+  &-inner {
+    width: max-content;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    .filter-item {
+      width: max-content;
+
+      h4 {
+        padding-bottom: 10px;
+      }
+      > div {
+        width: 200px;
+      }
+      .multiRange-input {
+        display: flex;
+        gap: 10px;
+
+        input {
+          background-color: hsl(0, 0%, 100%);
+          border-color: hsl(0, 0%, 80%);
+          border-radius: 4px;
+          border-style: solid;
+          border-width: 1px;
+          width: 50%;
+          padding: 10px;
+          color: hsl(0, 0%, 20%);
+        }
+      }
+      #instock {
+        margin: 0 0 0 10px;
+      }
+    }
+    input[type='checkbox'] {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .showmore {
+      color: #010E27;
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: 10px;
+      padding: 5px 0;
+    }
+  }
+  .filter-btns {
+    padding: 20px 0;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+    @media screen and (max-width: 1400px){
+      flex-wrap: wrap;
+    }
+
+    button {
+      width: 100%;
+      flex-grow: 1;
+
+      @media screen and (max-width: 1850px){
+        font-size: 16px;
+        padding: 5px 20px 10px 15px;
+
+        &:after {
+          width: calc(100% - 8px);
+          height: calc(100% - 7px);
+        }
+      }
+    }
+  }
+}

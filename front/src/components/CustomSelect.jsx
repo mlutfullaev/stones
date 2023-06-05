@@ -18,7 +18,8 @@ const CustomSelect = ({options}) => {
           primary25: '#ccc',
           primary: '#b0b0b0',
         },
-      })}/>
+      })}
+    />
   )
 }
 
