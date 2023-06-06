@@ -1,15 +1,26 @@
 .product-list {
   row-gap: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   padding: 10px 0 30px;
 
   .product {
+    text-align: center;
     padding: 0 10px;
-    width: 33%;
 
     img {
       width: 100%;
+    }
+
+    h3 {
+      font-size: 25px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(46, 48, 61, 0.72);
     }
   }
 }

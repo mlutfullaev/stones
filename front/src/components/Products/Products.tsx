@@ -1,14 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {ProductT} from "../../@types";
 
 import './products.scss'
 
 type ProductsT = {
-  products: {
-    img: string,
-    title: string,
-    type: string,
-  }[],
+  products: ProductT[],
 }
 
 const Products: React.FC<ProductsT> = ({products}) => {

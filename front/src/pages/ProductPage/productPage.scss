@@ -14,6 +14,80 @@
       padding: 20px 0;
       display: flex;
       width: 100%;
+
+      .product-info {
+        > div {
+          display: flex;
+          gap: 30px;
+          padding-bottom: 20px;
+        }
+        .article p {
+         font-weight: 500;
+         font-size: 16px;
+         color: rgba(46, 48, 61, 0.72);
+        }
+        .price {
+          .title {
+            text-align: left;
+          }
+          .discount {
+            font-weight: 700;
+            font-size: 19px;
+            text-decoration-line: line-through;
+            color: #ED1D24;
+          }
+        }
+        .colors {
+          gap: 10px;
+
+          p {
+            padding-right: 20px;
+            font-weight: 600;
+            font-size: 19px;
+          }
+          .color {
+            height: 30px;
+            width: 30px;
+            border-radius: 2px;
+          }
+        }
+        .buy {
+          .increment {
+            height: max-content;
+            display: flex;
+            border-radius: 10px;
+            border: 2px solid rgba(46, 48, 61, 0.19);
+
+            > * {
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            p {
+              padding: 0 20px;
+            }
+            > button {
+              width: 40px;
+              cursor: pointer;
+
+              &:first-child {
+                border-right: 2px solid rgba(46, 48, 61, 0.19);
+              }
+              &:last-child {
+                border-left: 2px solid rgba(46, 48, 61, 0.19);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .more-products {
+    padding: 20px 0;
+
+    .product-list {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 }

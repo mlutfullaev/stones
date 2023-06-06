@@ -33,7 +33,7 @@ const ProductSlider = () => {
       >
         {productSlides.map((slide, i) =>
           <div key={i} className='product-slide'>
-            <img src={slide} alt="slide"/>
+            <div style={{backgroundImage: `url(${slide})`}}></div>
           </div>
         )}
       </Slider>

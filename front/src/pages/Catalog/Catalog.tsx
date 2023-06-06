@@ -11,13 +11,14 @@ import Filter from "./Filter/Filter";
 
 import './catalog.scss'
 import Products from "../../components/Products/Products";
+import {ProductT} from "../../@types";
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' },
 ];
-const products = [
+const products: ProductT[] = [
   {
     img: catalog,
     title: 'Statuario Extra',
