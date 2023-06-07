@@ -24,7 +24,6 @@ export class StonesController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.stonesService.findAll();
   }
