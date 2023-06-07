@@ -21,9 +21,12 @@
     @media screen and (max-width: 1700px) {
       width: 100px;
     }
+    @media screen and (max-width: 1150px) {
+      width: 70px;
+    }
   }
   .blogs-content {
-    padding: 20px 0;
+    padding: 40px 0 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;

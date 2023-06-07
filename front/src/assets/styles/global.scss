@@ -10,9 +10,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-button {
-  font-family: 'Montserrat', sans-serif;
-}
 a {
   text-decoration: none;
   color: inherit;
@@ -26,6 +23,58 @@ button {
   border: none;
   background: transparent;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+
+  &.btn {
+    position: relative;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 12px 42px 22px 32px;
+
+
+    @media screen and (max-width: 1440px){
+      font-size: 20px;
+    }
+    svg {
+      padding-left: 10px;
+      width: 30px;
+    }
+    &:after {
+      content: '';
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+    &.black {
+      border-color: #000000;
+      color: #000;
+
+      &:after {
+        border-color: #000000;
+      }
+    }
+    &.grey {
+      color: #fff;
+      border: none;
+      background: #444;
+    }
+    &.grey-outline {
+      border-color: #444444;
+      color: #444444;
+
+      &:after {
+        border-color: #444;
+      }
+    }
+  }
 }
 .container {
   width: 100%;
@@ -41,56 +90,6 @@ button {
   }
   @media screen and (max-width: 1300px){
     max-width: 1050px;
-  }
-}
-.btn {
-  position: relative;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  background: transparent;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 27px;
-  padding: 12px 42px 22px 32px;
-
-
-  @media screen and (max-width: 1440px){
-    font-size: 20px;
-  }
-  svg {
-    padding-left: 10px;
-    width: 30px;
-  }
-  &:after {
-    content: '';
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-  }
-  &.black {
-    border-color: #000000;
-    color: #000;
-
-    &:after {
-      border-color: #000000;
-    }
-  }
-  &.grey {
-    color: #fff;
-    border: none;
-    background: #444;
-  }
-  &.grey-outline {
-    border-color: #444444;
-    color: #444444;
-
-    &:after {
-      border-color: #444;
-    }
   }
 }
 .title {
