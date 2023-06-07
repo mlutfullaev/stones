@@ -1,0 +1,122 @@
+.services-page {
+  position: relative;
+
+  header {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.73);
+  }
+  .title {
+    padding: 30px 0 50px;
+  }
+  .services-info {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .info-text {
+      h2 {
+        padding-bottom: 20px;
+        font-weight: 700;
+        font-size: 35px;
+      }
+      p {
+        padding-bottom: 10px;
+      }
+      button {
+        margin-top: 30px;
+      }
+    }
+  }
+  .services-slider {
+    padding: 40px;
+
+    .slick-slide {
+      padding: 20px
+    }
+    .slick-prev {
+      left: 0;
+      width: 40px;
+      height: 40px;
+    }
+    .slick-next {
+      right: 0;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .social {
+    width: max-content;
+    margin: 0 auto;
+    padding-bottom: 40px;
+
+    > div {
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+  .services-text {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+
+    .text-item:first-child {
+      background: #010E27;
+      color: #fff;
+      padding: 30px;
+
+      p {
+        padding: 0;
+        padding-top: 20px;
+      }
+    }
+    .text-item {
+      background: #FFFFFF;
+      box-shadow: 0 0 64px rgba(0, 0, 0, 0.1);
+
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+
+        h3 {
+          font-size: 35px;
+          font-weight: 700;
+
+          span {
+            font-weight: 400;
+          }
+        }
+      }
+      &-bg {
+        background-image: url("../../assets/img/statics-bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+      }
+      p {
+        padding: 20px;
+      }
+     }
+  }
+  .consultation {
+    margin: 50px 0;
+    max-width: 100%;
+
+    form {
+      max-width: 100%;
+
+      textarea {
+        max-width: 100%;
+      }
+    }
+  }
+}
