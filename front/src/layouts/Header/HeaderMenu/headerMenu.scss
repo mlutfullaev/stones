@@ -24,10 +24,44 @@ header .header-menu {
     z-index: 11;
     background-color: #fff;
     width: 400px;
+    max-width: 85%;
     height: 100vh;
     color: #454545;
     padding: 30px 20px;
     transform: translateX(-100%);
     transition: .3s;
+
+    .header-nav {
+      display: block !important;
+
+      .nav-list {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style-type: none;
+      }
+    }
+    .header-bottom {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 20px;
+
+      li {
+        svg {
+          fill: #454545;
+          margin-right: 10px;
+        }
+        p {
+          padding-bottom: 10px;
+        }
+      }
+    }
   }
 }
