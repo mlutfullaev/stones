@@ -93,3 +93,31 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .filter-wrapper {
+    z-index: 8;
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    visibility: hidden;
+
+    .filter {
+      transform: translateX(-100%);
+      transition: .3s;
+      background: #FFFFFF;
+      height: 100vh;
+      width: 70%;
+    }
+    &.active {
+      visibility: visible;
+
+      .filter {
+        transform: translateX(0);
+      }
+    }
+  }
+}
