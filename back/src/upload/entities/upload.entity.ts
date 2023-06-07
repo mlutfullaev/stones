@@ -12,4 +12,5 @@ export class UploadEntity {
   updatedAt: Date;
   serviceTitle: string;
   circleStoneId: number;
+  stoneId: number;
 }
