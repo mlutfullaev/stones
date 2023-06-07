@@ -1,10 +1,13 @@
 .product-list {
   row-gap: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
   padding: 10px 0 30px;
 
+  @media screen and (max-width: 1050px){
+    grid-template-columns: 1fr 1fr;
+  }
   .product {
     text-align: center;
     padding: 0 10px;
