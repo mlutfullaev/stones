@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import './headerMenu.scss';
+
 
 const HeaderMenu = (props: {burger: boolean}) => {
   return (
