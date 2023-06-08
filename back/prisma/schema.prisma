@@ -43,6 +43,14 @@ model Services {
   uploadedFile UploadedFile[]
 }
 
+model Blog {
+  id           Int            @id @default(autoincrement())
+  title        String         @unique
+  blogUrl      String?
+  createdAt    DateTime       @default(now())
+  uploadedFile UploadedFile[]
+}
+
 model Circlestone {
   id           Int            @id @default(autoincrement())
   page         String
@@ -69,6 +77,8 @@ model UploadedFile {
   circlestoneId Int?
   Stone         Stone?       @relation(fields: [stoneId], references: [id])
   stoneId       Int?
+  Blog          Blog?       @relation(fields: [blogId], references: [id])
+  blogId        Int?
 }
 
 model User {
