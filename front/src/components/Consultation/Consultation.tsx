@@ -2,12 +2,17 @@ import React from 'react';
 
 import './consultation.scss'
 
-const Consultation = () => {
+type ConsultationT = {
+  title?: string;
+  subtitle?: string;
+}
+
+const Consultation: React.FC<ConsultationT> = ({title, subtitle}) => {
   return (
     <div className='consultation'>
-      <h1>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h1>
+      <h1>{title || 'ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ'}</h1>
       <form action="">
-        <p className="subtitle">Оставьте заявку и в ближайшее время мы с Вами свяжемся</p>
+        <p className="subtitle">{subtitle || 'Оставьте заявку и в ближайшее время мы с Вами свяжемся'}</p>
         <label htmlFor="name">Ваше имя</label>
         <input type="text" id='name'/>
         <label htmlFor="phone">Ваш номер телефона *</label>
