@@ -11,7 +11,9 @@ export class StonesService {
   }
 
   findAll() {
-    return this.prismaService.stone.findMany();
+    return this.prismaService.stone.findMany({
+      include: { uploadedFile: true },
+    });
   }
 
   findOne(id: number) {

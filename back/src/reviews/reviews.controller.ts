@@ -24,7 +24,6 @@ export class ReviewsController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.reviewsService.findAll();
   }

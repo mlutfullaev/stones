@@ -7,11 +7,13 @@ import {
   Param,
   Delete,
   UseGuards,
+  Query,
 } from '@nestjs/common';
 import { ServiceService } from './service.service';
 import { CreateServiceDto } from './dto/create-service.dto';
 import { UpdateServiceDto } from './dto/update-service.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { BaseQueryDto } from 'src/util/baseQuery.dto';
 
 @Controller('service')
 export class ServiceController {
@@ -24,7 +26,6 @@ export class ServiceController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.serviceService.findAll();
   }
