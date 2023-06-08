@@ -6,21 +6,30 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model Stone {
-  id        Int      @id @default(autoincrement())
-  title     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt()
+  id                 Int            @id @default(autoincrement())
+  title              String
+  country            String?
+  radioactivityClass String?
+  waterAbsorption    String?
+  density            String?
+  abrasion           String?
+  otherNames         String?
+  similarGranites    String?
+  variants           Json?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt()
+  uploadedFile       UploadedFile[]
 }
 
 model Reviews {
   id        Int      @id @default(autoincrement())
   name      String
-  comment   String
+  comment   String   @db.Text
   rate      Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
@@ -30,7 +39,7 @@ model Services {
   id           Int            @id @default(autoincrement())
   title        String         @unique
   serviceTitle String
-  info         String
+  info         String         @db.Text
   uploadedFile UploadedFile[]
 }
 
@@ -58,6 +67,8 @@ model UploadedFile {
   serviceTitle  String?
   circlestone   Circlestone? @relation(fields: [circlestoneId], references: [id])
   circlestoneId Int?
+  Stone         Stone?       @relation(fields: [stoneId], references: [id])
+  stoneId       Int?
 }
 
 model User {
