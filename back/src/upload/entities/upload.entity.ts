@@ -13,4 +13,5 @@ export class UploadEntity {
   serviceTitle: string;
   circleStoneId: number;
   stoneId: number;
+  blogId:number;
 }

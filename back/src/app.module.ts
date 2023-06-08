@@ -7,6 +7,7 @@ import { UploadModule } from './upload/upload.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CirclestoneModule } from './circlestone/circlestone.module';
+import { BlogModule } from './blog/blog.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { CirclestoneModule } from './circlestone/circlestone.module';
     AuthModule,
     AuthModule,
     CirclestoneModule,
+    BlogModule,
   ],
   controllers: [],
   providers: [],
