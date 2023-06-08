@@ -1,0 +1,26 @@
+.accordion {
+  padding: 5px 0;
+
+  .accordion-top {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+  .accordion-body {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+
+    &.hided {
+      height: 0 !important;
+    }
+    &.active {
+      height: auto;
+    }
+
+  }
+}
