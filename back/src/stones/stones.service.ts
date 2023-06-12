@@ -12,12 +12,12 @@ export class StonesService {
 
   findAll() {
     return this.prismaService.stone.findMany({
-      include: { uploadedFile: true },
+      include: { uploadedFile: true, category: true },
     });
   }
 
   findOne(id: number) {
-    return this.prismaService.stone.findUnique({ where: { id } });
+    return this.prismaService.stone.findUnique({ where: { id }, include: {category: true, uploadedFile: true} });
   }
 
   update(id: number, updateStoneDto: UpdateStoneDto) {

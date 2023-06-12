@@ -29,7 +29,6 @@ export class StonesController {
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string) {
     return this.stonesService.findOne(+id);
   }

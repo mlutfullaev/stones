@@ -23,6 +23,8 @@ model Stone {
   variants           Json?
   createdAt          DateTime       @default(now())
   updatedAt          DateTime       @updatedAt()
+  category           Category?      @relation(fields: [categoryTitle], references: [title])
+  categoryTitle      String?
   uploadedFile       UploadedFile[]
 }
 
@@ -85,4 +87,12 @@ model User {
   id       Int    @id @default(autoincrement())
   username String @unique
   password String
+}
+
+
+model Category {
+  id       Int    @id @default(autoincrement())
+  title String @unique
+  stone Stone[]
+  
 }
