@@ -8,6 +8,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CirclestoneModule } from './circlestone/circlestone.module';
 import { BlogModule } from './blog/blog.module';
+import { CategoryModule } from './category/category.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -21,8 +23,9 @@ import { BlogModule } from './blog/blog.module';
     AuthModule,
     CirclestoneModule,
     BlogModule,
+    CategoryModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule { }
