@@ -11,18 +11,23 @@ export class StonesService {
   }
 
   findAll() {
-    return this.prismaService.stone.findMany();
+    return this.prismaService.stone.findMany({
+      include: { uploadedFile: true },
+    });
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} stone`;
+    return this.prismaService.stone.findUnique({ where: { id } });
   }
 
   update(id: number, updateStoneDto: UpdateStoneDto) {
-    return `This action updates a #${id} stone`;
+    return this.prismaService.stone.update({
+      where: { id },
+      data: updateStoneDto,
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} stone`;
+    return this.prismaService.stone.delete({ where: { id } });
   }
 }

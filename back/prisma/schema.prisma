@@ -11,9 +11,68 @@ datasource db {
 }
 
 model Stone {
+  id                 Int            @id @default(autoincrement())
+  title              String
+  country            String?
+  radioactivityClass String?
+  waterAbsorption    String?
+  density            String?
+  abrasion           String?
+  otherNames         String?
+  similarGranites    String?
+  variants           Json?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt()
+  uploadedFile       UploadedFile[]
+}
+
+model Reviews {
   id        Int      @id @default(autoincrement())
-  title     String
+  name      String
+  comment   String   @db.Text
+  rate      Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
 }
 
+model Services {
+  id           Int            @id @default(autoincrement())
+  title        String         @unique
+  serviceTitle String
+  info         String         @db.Text
+  uploadedFile UploadedFile[]
+}
+
+model Circlestone {
+  id           Int            @id @default(autoincrement())
+  page         String
+  uploadedFile UploadedFile[]
+}
+
+model UploadedFile {
+  id           Int      @id @default(autoincrement())
+  fieldname    String
+  originalname String
+  encoding     String
+  mimetype     String
+  destination  String
+  filename     String   @unique
+  path         String
+  size         Int
+  createdAt    DateTime @default(now())
+
+  updatedAt     DateTime     @updatedAt()
+  deletedAt     DateTime?
+  services      Services?    @relation(fields: [serviceTitle], references: [title], onDelete: Cascade)
+  serviceTitle  String?
+  circlestone   Circlestone? @relation(fields: [circlestoneId], references: [id])
+  circlestoneId Int?
+  Stone         Stone?       @relation(fields: [stoneId], references: [id])
+  stoneId       Int?
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
+}
