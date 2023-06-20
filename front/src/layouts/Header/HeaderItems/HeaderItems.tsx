@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from "react";
 
-import './headerItems.scss'
+import "./headerItems.scss";
+import {useLocation} from "react-router-dom";
+import axios from "axios";
 
 type HeaderItemsT = {
   burger: boolean,
@@ -8,6 +10,19 @@ type HeaderItemsT = {
 }
 
 const HeaderItems: React.FC<HeaderItemsT> = ({burger, setBurger}) => {
+  const [dollar, setDollar] = useState(0);
+  const [euro, setEuro] = useState(0);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  useEffect(() => {
+    axios.get("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json")
+      .then((res: any) => setDollar(res.data.usd.rub.toFixed(2)));
+    axios.get("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json")
+      .then((res: any) => setEuro(res.data.eur.rub.toFixed(2)));
+  }, []);
   return (
     <ul className="header-items">
       <li>
@@ -19,13 +34,13 @@ const HeaderItems: React.FC<HeaderItemsT> = ({burger, setBurger}) => {
           </svg>
         </button>
       </li>
-      <li className='header-burger'>
-        <button className={`burger${burger ? ' active' : ''}`}
+      <li className="header-burger">
+        <button className={`burger${burger ? " active" : ""}`}
                 onClick={() => setBurger(oldBurger => !oldBurger)}>
           <span></span>
         </button>
       </li>
-      <li className='header-contacts'>
+      <li className="header-contacts">
         <a href="tel:+88124080712">
           <svg className="phone" width="19" height="19" viewBox="0 0 19 19" fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -40,20 +55,20 @@ const HeaderItems: React.FC<HeaderItemsT> = ({burger, setBurger}) => {
           </svg>
           info@vkamne.com</a>
       </li>
-      <li className='header-currency'>
+      <li className="header-currency">
         <p>
           <svg className="email" width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd"
                   d="M8.16667 1.16667C8.16667 0.52234 7.64435 0 7 0C6.35565 0 5.83333 0.52234 5.83333 1.16667V1.81907C4.46827 1.98266 3.21225 2.4326 2.21216 3.1234C0.928107 4.01036 0 5.35531 0 7C0 8.48632 0.573615 9.86662 1.84077 10.8414C2.84011 11.6101 4.18558 12.0616 5.83333 12.2022V17.9922C4.91878 17.8457 4.13054 17.5325 3.53828 17.1234C2.71108 16.552 2.33333 15.8553 2.33333 15.1667C2.33333 14.5223 1.81099 14 1.16667 14C0.52234 14 0 14.5223 0 15.1667C0 16.8113 0.928107 18.1564 2.21216 19.0433C3.21225 19.734 4.46827 20.184 5.83333 20.3476V21C5.83333 21.6444 6.35565 22.1667 7 22.1667C7.64435 22.1667 8.16667 21.6444 8.16667 21V20.3507C9.52257 20.1951 10.7772 19.7662 11.7803 19.0849C13.0809 18.2015 14 16.8509 14 15.1667C14 13.6423 13.4335 12.2526 12.1518 11.2831C11.1498 10.5252 9.80455 10.0956 8.16667 9.96217V4.17448C9.08122 4.32094 9.86953 4.63416 10.4617 5.04325C11.2889 5.61464 11.6667 6.31135 11.6667 7C11.6667 7.64433 12.189 8.16667 12.8333 8.16667C13.4777 8.16667 14 7.64433 14 7C14 5.35531 13.0719 4.01036 11.7879 3.12341C10.7878 2.43259 9.53178 1.98264 8.16667 1.81907V1.16667ZM5.83333 4.1745C4.91878 4.32095 4.13054 4.63417 3.53828 5.04327C2.71108 5.61464 2.33333 6.31135 2.33333 7C2.33333 7.84701 2.63473 8.50834 3.26342 8.99197C3.78347 9.39202 4.60474 9.72813 5.83333 9.85857V4.1745ZM8.16667 12.3048V17.9973C9.08962 17.8575 9.87957 17.5553 10.4693 17.1547C11.2799 16.6041 11.6667 15.9131 11.6667 15.1667C11.6667 14.2604 11.3582 13.6085 10.7442 13.144C10.2268 12.7527 9.4052 12.4293 8.16667 12.3048Z"/>
           </svg>
-          77,2
+          {dollar}
         </p>
         <p>
           <svg className="email" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path fillRule="evenodd" clipRule="evenodd"
                   d="M12 15.5C9.49 15.5 7.32 14.08 6.24 12H12V10H5.58C5.53 9.67 5.5 9.34 5.5 9C5.5 8.66 5.53 8.33 5.58 8H12V6H6.24C7.32 3.92 9.5 2.5 12 2.5C13.61 2.5 15.09 3.09 16.23 4.07L18 2.3C16.41 0.87 14.3 0 12 0C8.08 0 4.76 2.51 3.52 6H0V8H3.06C3.02 8.33 3 8.66 3 9C3 9.34 3.02 9.67 3.06 10H0V12H3.52C4.76 15.49 8.08 18 12 18C14.31 18 16.41 17.13 18 15.7L16.22 13.93C15.09 14.91 13.62 15.5 12 15.5Z"/>
           </svg>
-          84,25
+          {euro}
         </p>
       </li>
     </ul>

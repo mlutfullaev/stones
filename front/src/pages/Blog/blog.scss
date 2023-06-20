@@ -1,7 +1,8 @@
 .blogs {
   position: relative;
+  min-height: 79.8vh;
   h1 {
-    padding: 30px 0;
+    padding: 30px 0 60px;
   }
   & > img {
     position: absolute;

@@ -6,7 +6,7 @@ const MoreProducts: React.FC<{products: ProductT[]}> = ({products}) => {
   return (
     <div className="more-products">
       <h1 className="title" style={{textAlign: 'left'}}>
-        <Products products={products} />
+        {/*<Products products={products} />*/}
       </h1>
     </div>
   );

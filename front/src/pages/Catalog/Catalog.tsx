@@ -12,6 +12,11 @@ import Filter from "./Filter/Filter";
 import "./catalog.scss";
 import Products from "../../components/Products/Products";
 import {ProductT} from "../../@types";
+import axios from "axios";
+import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
+import {Link} from "react-router-dom";
+import Empty from "../../components/Empty/Empty";
 
 const options = [
   {value: "chocolate", label: "Chocolate"},
@@ -59,6 +64,24 @@ const products: ProductT[] = [
 const Catalog: React.FC = () => {
   const quantity = 100;
   const [filterStatus, setFilterStatus] = useState(false);
+  const [stones, setStones] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    axios.get("http://1627061-ci09322.twc1.net:3001/stones")
+      .then((res: any) => {
+        setLoading(false);
+        setError(false);
+        setStones(res.data);
+        console.log(res.data)
+      })
+      .catch(e => {
+        setLoading(false);
+        setError(true);
+      })
+  }, []);
 
   useEffect(() => {
     const filterCloser = (e: MouseEvent) => {
@@ -103,7 +126,11 @@ const Catalog: React.FC = () => {
                 <CustomSelect options={options}/>
               </div>
             </div>
-            <Products products={products}/>
+            {loading && <Loading/>}
+            {error && <Error/>}
+            {!error && !loading ?
+              stones.length ? <Products stones={stones}/> : <Empty />
+              : null}
           </div>
         </div>
       </div>
