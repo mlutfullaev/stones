@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 
 import "./headerItems.scss";
 import {useLocation} from "react-router-dom";
+import axios from "axios";
 
 type HeaderItemsT = {
   burger: boolean,
@@ -17,12 +18,10 @@ const HeaderItems: React.FC<HeaderItemsT> = ({burger, setBurger}) => {
     window.scrollTo(0, 0);
   }, [pathname]);
   useEffect(() => {
-    fetch("https://api.currencyapi.com/v3/latest?apikey=WKmkUR94xmnwQfZj7yVWE1SQadPykAlB3cjW796Z&currencies=RUB")
-      .then(res => res.json())
-      .then(res => setDollar(res.data.RUB.value.toFixed(2)));
-    fetch("https://api.currencyapi.com/v3/latest?apikey=WKmkUR94xmnwQfZj7yVWE1SQadPykAlB3cjW796Z&currencies=RUB&base_currency=EUR")
-      .then(res => res.json())
-      .then(res => setEuro(res.data.RUB.value.toFixed(2)));
+    axios.get("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json")
+      .then((res: any) => setDollar(res.data.usd.rub.toFixed(2)));
+    axios.get("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json")
+      .then((res: any) => setEuro(res.data.eur.rub.toFixed(2)));
   }, []);
   return (
     <ul className="header-items">
