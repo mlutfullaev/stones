@@ -4,6 +4,11 @@
   .product-inner {
     padding: 20px 0;
 
+    > .title {
+      font-size: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
     .subtitle {
       text-align: center;
       font-size: 25px;

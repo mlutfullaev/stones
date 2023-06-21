@@ -86,7 +86,7 @@ const Blog = () => {
         setError(false);
         setBlogs(res.data);
       })
-      .catch(e => {
+      .catch(() => {
         setLoading(false);
         setError(true);
       })
@@ -99,12 +99,11 @@ const Blog = () => {
       <Header/>
       <div className="container">
         <h1 className="title">БЛОГ</h1>
-
         {loading && <Loading/>}
         {error && <Error/>}
         {!error && !loading ?
           blogs.length ? <div className="blogs-content">
-          {blogs.map((blog, i) =>
+          {blogs.map((blog) =>
             <div className="blog" key={blog.id}>
               {/*<img src={`http://1627061-ci09322.twc1.net:3001/upload/fayl/${blog.uploadedFile[0].id}`} alt=""/>*/}
               <h2>{blog.title}</h2>

@@ -19,7 +19,6 @@ import Info from "./Info/Info";
 import Events from "./Events/Events";
 import Collection from "./Collection/Collection";
 import Advantages from "./Advantages/Advantages";
-// import Projects from "../../components/Projects/Projects";
 import Consultation from "../../components/Consultation/Consultation";
 
 import "slick-carousel/slick/slick.css";
@@ -119,7 +118,7 @@ const Main = () => {
             <Consultation/>
             <div className="video">
               <iframe src="https://www.youtube.com/embed/n67dRQihNJ4"
-                      title="YouTube video player" frameBorder="0"
+                      title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen></iframe>
             </div>

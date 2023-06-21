@@ -9,7 +9,7 @@ import './productSlider.scss'
 
 const productSlides = [slide1, slide2, slide3, slide4]
 
-const ProductSlider = () => {
+const ProductSlider = ({images}: {images: {id: string}[]}) => {
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
 
@@ -18,7 +18,7 @@ const ProductSlider = () => {
       <Slider className='main-slider' asNavFor={nav2} ref={(slider1) => slider1 ? setNav1(slider1) : null}>
         {productSlides.map((slide, i) =>
           <div key={i} className='product-slide'>
-            <div style={{backgroundImage: `url(${slide})`}}></div>
+            <div style={{backgroundImage: `http://1627061-ci09322.twc1.net:3001/upload/fayl/${slide.id}`}}></div>
           </div>
         )}
       </Slider>
@@ -30,10 +30,11 @@ const ProductSlider = () => {
         swipeToSlide={true}
         focusOnSelect={true}
         className='slides'
+        infinite={false}
       >
-        {productSlides.map((slide, i) =>
+        {images.map((slide, i) =>
           <div key={i} className='product-slide'>
-            <div style={{backgroundImage: `url(${slide})`}}></div>
+            <div style={{backgroundImage: `http://1627061-ci09322.twc1.net:3001/upload/fayl/${slide.id}`}}></div>
           </div>
         )}
       </Slider>
