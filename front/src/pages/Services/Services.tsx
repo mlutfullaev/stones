@@ -22,7 +22,6 @@ import Projects from "../../components/Projects/Projects";
 import axios from "axios";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
-import {Link} from "react-router-dom";
 import Empty from "../../components/Empty/Empty";
 
 // const services: ProjectT[] = [
@@ -129,10 +128,9 @@ const Services = () => {
       .then((res: any) => {
         setLoading(false);
         setError(false);
-        console.log(res.data)
         setServices(res.data);
       })
-      .catch(e => {
+      .catch(() => {
         setLoading(false);
         setError(true);
       })

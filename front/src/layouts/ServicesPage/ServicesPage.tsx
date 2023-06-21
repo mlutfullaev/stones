@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Slider from "react-slick";
 import infoBg from '../../assets/img/statics-bg.png';
-// import servicesInfoImg from '../../assets/img/services-page-img.png';
+import servicesInfoImg from '../../assets/img/services-page-img.png';
 import stone1 from '../../assets/img/stone1.png';
 import stone2 from '../../assets/img/bottom-stone.png';
 import stone3 from '../../assets/img/stone3.png';
@@ -20,7 +20,7 @@ import Empty from "../../components/Empty/Empty";
 
 const ServicesPage = () => {
   const {id} = useParams()
-  const [service, setService] = useState<any>(null);
+  const [service, setService] = useState<any>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -38,6 +38,8 @@ const ServicesPage = () => {
         setError(true);
       })
   }, []);
+
+  // console.log(service.uploadedFile[0])
 
   return (
     <div className='services-page'>
@@ -63,11 +65,19 @@ const ServicesPage = () => {
                 </button>
               </div>
               <div className="info-img" style={{backgroundImage: `url(${infoBg})`}}>
-                <img src={`http://1627061-ci09322.twc1.net:3001/upload/fayl/${service.uploadedFile[0].id}`} alt=""/>
-              </div>sd
+                <img src={servicesInfoImg} alt=""/>
+              </div>
             </div>
             <Slider {...settings}>
-              {service.uploadedFile.map((item: any) => <img src={`http://1627061-ci09322.twc1.net:3001/upload/fayl/${item.id}`} alt=""/>)}
+              {/*<img src={servicesInfoImg} alt=""/>*/}
+              {/*<img src={servicesInfoImg} alt=""/>*/}
+              {/*<img src={servicesInfoImg} alt=""/>*/}
+              {/*<img src={servicesInfoImg} alt=""/>*/}
+              {/*<img src={servicesInfoImg} alt=""/>*/}
+              {/*<img src={servicesInfoImg} alt=""/>*/}
+              {service.uploadedFile.map((img: any) =>
+                <img key={img.id} src={`http://1627061-ci09322.twc1.net:3001/upload/fayl/${img.id}`} alt=""/>
+              )}
             </Slider>
             <div className="social">
               <button className="btn black">Связаться с нами</button>
@@ -155,7 +165,7 @@ const ServicesPage = () => {
 };
 
 const settings = {
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
