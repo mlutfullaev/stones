@@ -1,13 +1,14 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import catalog from "../../assets/img/catalog/catalog.png";
+import axios from "axios";
+import {useParams} from "react-router-dom";
+import {ProductT} from "../../@types";
 
 import Header from "../../layouts/Header/Header";
 import ProductSlider from "./ProductSlider/ProductSlider";
-import ProductDesc from "./ProductDesc/ProductDesc";
 import MoreProducts from "./MoreProducts/MoreProducts";
 
 import "./productPage.scss";
-import {ProductT} from "../../@types";
 
 const products: ProductT[] = [
   {
@@ -39,13 +40,33 @@ const products: ProductT[] = [
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
+  const {id} = useParams();
+  const [stone, setStone] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    axios.get("http://1627061-ci09322.twc1.net:3001/stones/" + id)
+      .then((res: any) => {
+        setLoading(false);
+        setError(false);
+        setStone(res.data);
+        console.log(res.data)
+      })
+      .catch(e => {
+        setLoading(false);
+        setError(true);
+      })
+  }, []);
+
   return (
     <div className="product-page">
       <Header />
       <div className="container">
         <div className="product-inner">
-          <h1 className="title">Diano Reale</h1>
-          <p className="subtitle">Мрамор</p>
+          <h1 className="title">{stone.title}</h1>
+          <p className="subtitle">{stone.categoryTitle}</p>
           <div className="product-content">
             <ProductSlider />
             <div className="product-info">
@@ -84,7 +105,15 @@ const ProductPage = () => {
                   </button>
                 </div>
               </div>
-              <ProductDesc />
+              <div className="product-desc" style={{flexDirection: 'column'}}>
+                <h1>Описание</h1>
+                <div className='desc-item'>
+                  <div className='desc-text'>
+                    <p>Description Description Description Description Description Description Description Description Description
+                      Description Description Description </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

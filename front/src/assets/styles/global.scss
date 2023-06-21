@@ -5,6 +5,9 @@ body {
     overflow: hidden;
   }
 }
+#root > div:first-child {
+  min-height: 79.7vh;
+}
 * {
   margin: 0;
   padding: 0;

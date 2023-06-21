@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import {ProjectT} from "../../@types";
 import bottomStone from "../../assets/img/bottom-stone.png";
 import mainbg from "../../assets/img/main-bg.png";
-import projectStone from '../../assets/img/projects/project-stone.png';
+// import projectStone from '../../assets/img/projects/project-stone.png';
 import project1 from "../../assets/img/projects/project1.png";
 import project2 from "../../assets/img/projects/project2.png";
 import project3 from "../../assets/img/projects/project3.png";
@@ -19,7 +19,7 @@ import Info from "./Info/Info";
 import Events from "./Events/Events";
 import Collection from "./Collection/Collection";
 import Advantages from "./Advantages/Advantages";
-import Projects from "../../components/Projects/Projects";
+// import Projects from "../../components/Projects/Projects";
 import Consultation from "../../components/Consultation/Consultation";
 
 import "slick-carousel/slick/slick.css";
@@ -107,10 +107,10 @@ const Main = () => {
       <Events/>
       <Collection/>
       <Advantages/>
-      <Projects projects={projects}>
-        <img className='stone-bg' src={projectStone} alt=""/>
-        <h1 className="title">Проекты с натуральным камнем</h1>
-      </ Projects>
+      {/*<Projects projects={projects}>*/}
+      {/*  <img className='stone-bg' src={projectStone} alt=""/>*/}
+      {/*  <h1 className="title">Проекты с натуральным камнем</h1>*/}
+      {/*</ Projects>*/}
       <section className='main-bottom'>
         <img src={bottomStone} alt=""/>
         <div className="container">
