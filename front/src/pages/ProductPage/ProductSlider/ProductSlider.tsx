@@ -6,6 +6,7 @@ import slide3 from '../../../assets/img/productPage/slide3.png'
 import slide4 from '../../../assets/img/productPage/slide4.png'
 
 import './productSlider.scss'
+import {HOST_URL} from "../../../assets/consts";
 
 const productSlides = [slide1, slide2, slide3, slide4]
 
@@ -16,9 +17,9 @@ const ProductSlider = ({images}: {images: {id: string}[]}) => {
   return (
     <div className='product-slider'>
       <Slider className='main-slider' asNavFor={nav2} ref={(slider1) => slider1 ? setNav1(slider1) : null}>
-        {productSlides.map((slide, i) =>
+        {images.map((slide, i) =>
           <div key={i} className='product-slide'>
-            <div style={{backgroundImage: `http://1627061-ci09322.twc1.net:3001/upload/fayl/${slide.id}`}}></div>
+            <div style={{backgroundImage: `url(${HOST_URL}upload/fayl/${slide.id})`}}></div>
           </div>
         )}
       </Slider>
@@ -34,7 +35,7 @@ const ProductSlider = ({images}: {images: {id: string}[]}) => {
       >
         {images.map((slide, i) =>
           <div key={i} className='product-slide'>
-            <div style={{backgroundImage: `http://1627061-ci09322.twc1.net:3001/upload/fayl/${slide.id}`}}></div>
+            <div style={{backgroundImage: `url(${HOST_URL}upload/fayl/${slide.id})`}}></div>
           </div>
         )}
       </Slider>

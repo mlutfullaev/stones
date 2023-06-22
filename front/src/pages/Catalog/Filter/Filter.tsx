@@ -1,22 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Select from "react-select";
 import filterStone from "../../../assets/img/catalog/filterStone.png";
 
-import Accordion from "../../../components/Accordion/Accordion";
+// import Accordion from "../../../components/Accordion/Accordion";
 import MultiRange from "../../../components/MultiRange/MultiRange";
 
 import "./filter.scss";
 
 type FilterT = {
-  isOpen: boolean
+  isOpen: boolean,
+  size: {value: string, label: string},
+  setSize: React.Dispatch<React.SetStateAction<{value: string, label: string}>>,
+  country: {value: string, label: string},
+  setCountry: React.Dispatch<React.SetStateAction<{value: string, label: string}>>,
+  price:  {min: number, max: number},
+  setPrice: React.Dispatch<React.SetStateAction<{min: number, max: number}>>,
+  reset: () => void
 }
 
-const Filter: React.FC<FilterT> = ({isOpen}) => {
-  const accordion = useState(0);
-  const [instock, setInstock] = useState(false);
+const Filter: React.FC<FilterT> = ({isOpen, reset, country, setCountry, size, setSize, price,  setPrice}) => {
   const [categories, setCategories] = useState<string[]>([]);
-  const [colors, setColors] = useState<string[]>([]);
-
 
   const changingCategories = (category: string) => {
     if (categories.includes(category)) {
@@ -26,21 +29,14 @@ const Filter: React.FC<FilterT> = ({isOpen}) => {
       setCategories((oldCategories) => [...oldCategories, category]);
     }
   };
-  const changingColors = (color: string) => {
-    if (colors.includes(color)) {
-      const filtered = colors.filter(item => item !== color);
-      setColors(filtered);
-    } else {
-      setColors((oldColors) => [...oldColors, color]);
-    }
-  };
 
   return (
     <div className={`filter-wrapper${isOpen ? " active" : ""}`}>
       <div className="filter">
         <img src={filterStone} alt=""/>
         <div className="filter-inner">
-          <Accordion title="Категория" state={accordion} index={1}>
+          <div className="filter-item">
+            <h4>Категории</h4>
             <input id="granite" onChange={() => changingCategories("granite")} type="checkbox"/>
             <label htmlFor="granite">Гранит</label><br/>
             <input id="onyx" onChange={() => changingCategories("onyx")} type="checkbox"/>
@@ -51,50 +47,48 @@ const Filter: React.FC<FilterT> = ({isOpen}) => {
             <label htmlFor="travertine">Травертин</label><br/>
             <input id="mosaic" onChange={() => changingCategories("mosaic")} type="checkbox"/>
             <label htmlFor="mosaic">Мозаика</label>
-          </Accordion>
-          <Accordion title={"Цвет"} state={accordion} index={2}>
-            <input id="brown" onChange={() => changingColors("brown")} type="checkbox"/>
-            <label htmlFor="brown">Коричневый</label><br/>
-            <input id="white" onChange={() => changingColors("white")} type="checkbox"/>
-            <label htmlFor="white">Белый</label><br/>
-            <input id="black" onChange={() => changingColors("black")} type="checkbox"/>
-            <label htmlFor="black">Черный</label><br/>
-            <input id="beige" onChange={() => changingColors("beige")} type="checkbox"/>
-            <label htmlFor="beige">Бежевый</label><br/>
-            <input id="baroque" onChange={() => changingColors("baroque")} type="checkbox"/>
-            <label htmlFor="baroque">Барокко</label><br/>
-            <button className="showmore">Показать еще</button>
-          </Accordion>
+          </div>
           <div className="filter-item">
             <h4>Размер</h4>
-            <Select options={[]} onChange={(selectedOption) => console.log(selectedOption)}/>
+            <Select options={sizes} value={size} onChange={(selectedOption) => selectedOption ? setSize(selectedOption) : null}/>
           </div>
           <div className="filter-item">
             <h4>Страна</h4>
-            <Select options={[{value: "all", label: "Все"}]} onChange={(selectedOption) => console.log(selectedOption)}/>
-          </div>
-          <div className="filter-item">
-            <h4>Толщина</h4>
-            <Select options={[{value: "sleb20mm", label: "Слэб, 20мм"}]} onChange={(selectedOption) => console.log(selectedOption)}/>
+            <Select options={countries} value={country} onChange={(selectedOption) => selectedOption ? setCountry(selectedOption) : null}/>
           </div>
           <div className="filter-item">
             <h4>Цена</h4>
-            <MultiRange min={1500} onChange={({min, max}) => {
-              console.log(min);
-            }} max={5500}/>
-          </div>
-          <div className="filter-item">
-            <label htmlFor="instock">В наличии</label>
-            <input id="instock" checked={instock} onChange={() => setInstock(oldvalue => !oldvalue)} type="checkbox"/>
+            <MultiRange minVal={price.min} maxVal={price.max} setMinVal={(val: number) => {setPrice({min: val, max: price.max})}} setMaxVal={(val: number) => {setPrice({min: price.min, max: val})}} min={1000} max={10000} onChange={({min, max}) => {
+              setPrice({min, max});
+            }}/>
           </div>
         </div>
         <div className="filter-btns">
-          <button className="btn grey-outline">Очистить</button>
-          <button className="btn grey">Применить</button>
+          <button className="btn grey-outline" onClick={reset}>Очистить</button>
         </div>
       </div>
     </div>
   );
 };
+
+const sizes = [
+  {value: "200х100", label: "200х100"},
+  {value: "305х305", label: "305х305"},
+  {value: "457х457", label: "457х457"},
+  {value: "600х300", label: "600х300"},
+  {value: "L*750", label: "L*750"},
+  {value: "2100*300", label: "2100*300"},
+  {value: "2610*350", label: "2610*350"},
+  {value: "2970х1650", label: "2970х1650"},
+  {value: "3000х1900", label: "3000х1900"},
+  {value: "", label: "Все"}
+];
+
+const countries = [
+  {value: "Бразилия", label: "Бразилия"},
+  {value: "Китай", label: "Китай"},
+  {value: "Финляндия", label: "Финляндия"},
+  {value: "", label: "Все"}
+];
 
 export default Filter;

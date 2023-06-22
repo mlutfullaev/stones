@@ -17,6 +17,7 @@ import axios from "axios";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import Empty from "../../components/Empty/Empty";
+import {HOST_URL} from "../../assets/consts";
 
 const ServicesPage = () => {
   const {id} = useParams()
@@ -26,7 +27,7 @@ const ServicesPage = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get("http://1627061-ci09322.twc1.net:3001/service/" + id)
+    axios.get(`${HOST_URL}service/${id}`)
       .then((res: any) => {
         setLoading(false);
         setError(false);
@@ -76,7 +77,7 @@ const ServicesPage = () => {
               {/*<img src={servicesInfoImg} alt=""/>*/}
               {/*<img src={servicesInfoImg} alt=""/>*/}
               {service.uploadedFile.map((img: any) =>
-                <img key={img.id} src={`http://1627061-ci09322.twc1.net:3001/upload/fayl/${img.id}`} alt=""/>
+                <img key={img.id} src={`${HOST_URL}upload/fayl/${img.id}`} alt=""/>
               )}
             </Slider>
             <div className="social">

@@ -51,6 +51,10 @@
         margin: 0 0 0 10px;
       }
     }
+    #react-select-3-listbox,
+    #react-select-5-listbox {
+      z-index: 3;
+    }
     input[type='checkbox'] {
       margin-right: 10px;
       margin-bottom: 10px;

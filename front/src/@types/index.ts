@@ -13,7 +13,12 @@ export type BlogT = {
     createdAt: string
 }
 
-// export type StoneT = {
-//     title: string,
-//     abrasion
-// }
+export type StoneT = {
+    title: string,
+    abrasion: string,
+    uploadedFile: {id: number}[],
+    categoryTitle: string,
+    country: string,
+    id: number,
+    variants: {format: string, pricerub: string, priceusd: string}[]
+}

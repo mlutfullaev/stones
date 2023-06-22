@@ -1,0 +1,1 @@
+export const HOST_URL = 'http://1627061-ci09322.twc1.net:3001/'

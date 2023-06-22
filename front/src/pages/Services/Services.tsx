@@ -23,6 +23,7 @@ import axios from "axios";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import Empty from "../../components/Empty/Empty";
+import {HOST_URL} from "../../assets/consts";
 
 // const services: ProjectT[] = [
 //   {
@@ -124,7 +125,7 @@ const Services = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get("http://1627061-ci09322.twc1.net:3001/service")
+    axios.get(`${HOST_URL}service`)
       .then((res: any) => {
         setLoading(false);
         setError(false);

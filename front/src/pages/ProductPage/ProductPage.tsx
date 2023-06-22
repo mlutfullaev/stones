@@ -12,6 +12,7 @@ import "./productPage.scss";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import Empty from "../../components/Empty/Empty";
+import {HOST_URL} from "../../assets/consts";
 
 const products: ProductT[] = [
   {
@@ -50,7 +51,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get("http://1627061-ci09322.twc1.net:3001/stones/" + id)
+    axios.get(`${HOST_URL}stones/${id}`)
       .then((res: any) => {
         setLoading(false);
         setError(false);
