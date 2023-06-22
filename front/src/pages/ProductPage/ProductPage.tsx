@@ -120,43 +120,32 @@ const ProductPage = () => {
                     </div>
                   </div>
                   <div className="product-desc" style={{flexDirection: 'column'}}>
-                    <h1>Характеристики</h1>
-                    <div className="desc-property">
-                      <div className="desc-property-names">
-                        <div>
-                          <p>Страна: </p>
-                          <div></div>
-                        </div>
-                        <div>
-                          <p>Водопоглощение: </p>
-                          <div></div>
-                        </div>
-                        <div>
-                          <p>Плотность: </p>
-                          <div></div>
-                        </div>
-                        <div>
-                          <p>Изделия: </p>
-                          <div></div>
-                        </div>
-                        <div>
-                          <p>Формат мм: </p>
-                          <div></div>
-                        </div>
-                        <div>
-                          <p>Фактура: </p>
-                          <div></div>
-                        </div>
-                      </div>
-                      <div className="desc-properties">
-                        <p>Италия</p>
-                        <p>0,16%</p>
-                        <p>2,65 гр/куб.см</p>
-                        <p>Слэбы 20мм</p>
-                        <p>600х300х20</p>
-                        <p> Полирование</p>
-                      </div>
-                    </div>
+                    <h1>Описание</h1>
+                    <table>
+                      <thead>
+                      <tr>
+                        <th>Изделия</th>
+                        <th>Формат</th>
+                        <th>Цена usd/pcs</th>
+                        <th>Цена руб/шт</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      {stone.variants.map((variant: {
+                        format: string,
+                        pricerub: string,
+                        priceusd: string,
+                        product: string
+                      }) => (
+                        <tr>
+                          <td>{variant.product}</td>
+                          <td>{variant.format}</td>
+                          <td>{variant.priceusd}</td>
+                          <td>{variant.pricerub}</td>
+                        </tr>
+                      ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>

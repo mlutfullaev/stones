@@ -20,6 +20,6 @@ export type StoneT = {
     categoryTitle: string,
     country: string,
     id: number,
-    variants: {format: string, pricerub: string, priceusd: string}[],
+    variants: {format: string, pricerub: string, priceusd: string, product: string}[],
     createdAt: string
 }
