@@ -1,8 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import Select from "react-select";
 import filterStone from "../../../assets/img/catalog/filterStone.png";
-
-// import Accordion from "../../../components/Accordion/Accordion";
 import MultiRange from "../../../components/MultiRange/MultiRange";
 
 import "./filter.scss";
@@ -15,20 +13,13 @@ type FilterT = {
   setCountry: React.Dispatch<React.SetStateAction<{value: string, label: string}>>,
   price:  {min: number, max: number},
   setPrice: React.Dispatch<React.SetStateAction<{min: number, max: number}>>,
-  reset: () => void
+  reset: () => void,
+  changingCategories: (category: string) => void,
+  categories: string[]
 }
 
-const Filter: React.FC<FilterT> = ({isOpen, reset, country, setCountry, size, setSize, price,  setPrice}) => {
-  const [categories, setCategories] = useState<string[]>([]);
+const Filter: React.FC<FilterT> = ({changingCategories, categories, isOpen, reset, country, setCountry, size, setSize, price,  setPrice}) => {
 
-  const changingCategories = (category: string) => {
-    if (categories.includes(category)) {
-      const filtered = categories.filter(item => item !== category);
-      setCategories(filtered);
-    } else {
-      setCategories((oldCategories) => [...oldCategories, category]);
-    }
-  };
 
   return (
     <div className={`filter-wrapper${isOpen ? " active" : ""}`}>
@@ -37,19 +28,19 @@ const Filter: React.FC<FilterT> = ({isOpen, reset, country, setCountry, size, se
         <div className="filter-inner">
           <div className="filter-item">
             <h4>Категории</h4>
-            <input id="granite" onChange={() => changingCategories("granite")} type="checkbox"/>
+            <input id="granite" onChange={() => changingCategories("Гранит")} type="checkbox" checked={categories.includes('Гранит')}/>
             <label htmlFor="granite">Гранит</label><br/>
-            <input id="onyx" onChange={() => changingCategories("onyx")} type="checkbox"/>
+            <input id="onyx" onChange={() => changingCategories("Оникс")} type="checkbox" checked={categories.includes('Оникс')}/>
             <label htmlFor="onyx">Оникс</label><br/>
-            <input id="marble" onChange={() => changingCategories("marble")} type="checkbox"/>
+            <input id="marble" onChange={() => changingCategories("Мрамор")} type="checkbox" checked={categories.includes('Мрамор')}/>
             <label htmlFor="marble">Мрамор</label><br/>
-            <input id="travertine" onChange={() => changingCategories("travertine")} type="checkbox"/>
+            <input id="travertine" onChange={() => changingCategories("Травертин")} type="checkbox" checked={categories.includes('Травертин')}/>
             <label htmlFor="travertine">Травертин</label><br/>
-            <input id="mosaic" onChange={() => changingCategories("mosaic")} type="checkbox"/>
+            <input id="mosaic" onChange={() => changingCategories("Мозаика")} type="checkbox" checked={categories.includes('Мозаика')}/>
             <label htmlFor="mosaic">Мозаика</label>
           </div>
           <div className="filter-item">
-            <h4>Размер</h4>
+            <h4>Формат</h4>
             <Select options={sizes} value={size} onChange={(selectedOption) => selectedOption ? setSize(selectedOption) : null}/>
           </div>
           <div className="filter-item">
@@ -58,9 +49,7 @@ const Filter: React.FC<FilterT> = ({isOpen, reset, country, setCountry, size, se
           </div>
           <div className="filter-item">
             <h4>Цена</h4>
-            <MultiRange minVal={price.min} maxVal={price.max} setMinVal={(val: number) => {setPrice({min: val, max: price.max})}} setMaxVal={(val: number) => {setPrice({min: price.min, max: val})}} min={1000} max={10000} onChange={({min, max}) => {
-              setPrice({min, max});
-            }}/>
+            <MultiRange minVal={price.min} maxVal={price.max} setMinVal={(val: number) => {setPrice({min: val, max: price.max})}} setMaxVal={(val: number) => {setPrice({min: price.min, max: val})}} min={1000} max={10000}/>
           </div>
         </div>
         <div className="filter-btns">

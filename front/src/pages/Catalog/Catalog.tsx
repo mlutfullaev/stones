@@ -1,25 +1,24 @@
 import React, {useEffect, useState} from "react";
+import Select from "react-select";
+import {StoneT} from "../../@types";
+import axios from "axios";
 import {HOST_URL} from "../../assets/consts";
 import banner from "../../assets/img/catalog/banner.png";
 import catalogLeft from "../../assets/img/catalog/catalog-left.png";
 import catalogRight from "../../assets/img/catalog/catalog-right.png";
 import catalogBottomRight from "../../assets/img/catalog/catalog-bottom-right.png";
 
-import CustomSelect from "../../components/CustomSelect";
+import Products from "../../components/Products/Products";
+import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
+import Empty from "../../components/Empty/Empty";
 import Header from "../../layouts/Header/Header";
 import Filter from "./Filter/Filter";
 
 import "./catalog.scss";
-import Products from "../../components/Products/Products";
-import {StoneT} from "../../@types";
-import axios from "axios";
-import Loading from "../../components/Loading/Loading";
-import Error from "../../components/Error/Error";
-import Empty from "../../components/Empty/Empty";
-import Select from "react-select";
 
 const sortBy = [
-  {value: "", label: "По дате добавление"},
+  {value: "date", label: "По дате добавление"},
   {value: "cheep", label: "Сначала дешевле"},
   {value: "expensive", label: "Сначала дороже"},
 ];
@@ -30,11 +29,20 @@ const Catalog: React.FC = () => {
   const [stones, setStones] = useState<StoneT[]>([]);
   const [size, setSize] = useState({value: "", label: "Все"});
   const [country, setCountry] = useState({value: "", label: "Все"});
-  const [sort, setSort] = useState({value: "", label: "По дате добавление"});
-  const [price, setPrice] = useState<{ min: number, max: number }>({min: 1000, max: 10000});
+  const [sort, setSort] = useState({value: "date", label: "По дате добавление"});
+  const [price, setPrice] = useState<{ min: number, max: number }>({min: 1000, max: 50000});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [categories, setCategories] = useState<string[]>([]);
 
+  const changingCategories = (category: string) => {
+    if (categories.includes(category)) {
+      const filtered = categories.filter(item => item !== category);
+      setCategories(filtered);
+    } else {
+      setCategories((oldCategories) => [...oldCategories, category]);
+    }
+  };
   useEffect(() => {
     const filterCloser = (e: MouseEvent) => {
       const target = e.target as HTMLDivElement;
@@ -59,23 +67,54 @@ const Catalog: React.FC = () => {
         setStoneServer(res.data)
         setStones(res.data);
       })
-      .catch(e => {
+      .catch(() => {
         setLoading(false);
         setError(true);
       });
   }, []);
 
   useEffect(() => {
-    let filteredStone = stoneServer.filter((item: StoneT) => item.variants[0].format.includes(size.value));
+    let filteredStone = stoneServer.filter((item: StoneT) => {
+      let result: boolean = false;
+      item.variants.forEach(variant => {
+        if (variant.format.includes(size.value)) {
+          result = true;
+        }
+      })
+      return result;
+    });
     filteredStone = filteredStone.filter((item: StoneT) => item.country.includes(country.value));
-    filteredStone = filteredStone.filter((item: StoneT) => Number(item.variants[0].pricerub) >= price.min && Number(item.variants[0].pricerub) <= price.max)
+    filteredStone = filteredStone.filter((item: StoneT) => {
+      let result: boolean = false;
+      item.variants.forEach(variant => {
+        if ( +variant.pricerub >= price.min && +variant.pricerub <= price.max) {
+          result = true
+        }
+      })
+      return result
+    })
+    if (sort.value === 'date') {
+      filteredStone = filteredStone = filteredStone.sort((a, b) => {
+        const firstDate = new Date(a.createdAt).getTime();
+        const secondDate = new Date(b.createdAt).getTime();
+        return firstDate - secondDate
+      })
+    } else if (sort.value === 'cheep') {
+      filteredStone = filteredStone.sort((a, b) => +a.variants[0].pricerub - +b.variants[0].pricerub)
+    } else if (sort.value === 'expensive') {
+      filteredStone = filteredStone.sort((a, b) => +b.variants[0].pricerub - +a.variants[0].pricerub)
+    }
+    if (categories.length) {
+      filteredStone = filteredStone.filter((item: StoneT) => categories.includes(item.categoryTitle))
+    }
     setStones([...filteredStone]);
-  }, [size, stoneServer, country, sort, price]);
+  }, [size, stoneServer, country, sort, price, categories]);
 
   const resetFilter = () => {
     setSize({value: "", label: "Все"});
     setCountry({value: "", label: "Все"});
     setPrice({min: 1000, max: 10000});
+    setCategories([])
   };
 
   return (
@@ -91,7 +130,7 @@ const Catalog: React.FC = () => {
       <h1 className="title">КАТАЛОГ</h1>
       <div className="container">
         <div className="catalog-inner">
-          <Filter price={price} setPrice={setPrice} country={country} setCountry={setCountry} setSize={setSize} size={size} isOpen={filterStatus} reset={resetFilter}/>
+          <Filter categories={categories} changingCategories={changingCategories} price={price} setPrice={setPrice} country={country} setCountry={setCountry} setSize={setSize} size={size} isOpen={filterStatus} reset={resetFilter}/>
           <div className="catalog-content">
             <div className="catalog-top">
               <div>
@@ -105,7 +144,7 @@ const Catalog: React.FC = () => {
               </div>
               <div>
                 <p>Сортировать по: </p>
-                <Select options={sortBy} value={sort} onChange={(selected) => selected ? setSort(selected) : null}/>
+                <Select isSearchable={false} options={sortBy} value={sort} onChange={(selected) => selected ? setSort(selected) : null}/>
               </div>
             </div>
             {loading && <Loading/>}
