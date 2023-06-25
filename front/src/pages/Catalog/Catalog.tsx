@@ -33,7 +33,7 @@ const Catalog: React.FC = () => {
   const [price, setPrice] = useState<{ min: number, max: number }>({min: 1000, max: 50000});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [categories, setCategories] = useState<string[]>(['Мозаика']);
+  const [categories, setCategories] = useState<string[]>([]);
 
   const changingCategories = (category: string) => {
     if (categories.includes(category)) {

@@ -20,7 +20,7 @@ const HeaderNav = () => {
           <Link to='/services'>Услуги</Link>
         </li>
         <li className='nav-item'>
-          <a href="#">Портфолио</a>
+          <a href="/catalog">Каталог</a>
         </li>
         <li className='nav-item'>
           <a href="#">Информация</a>

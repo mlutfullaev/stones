@@ -16,7 +16,7 @@ const Projects: React.FC<ProjectsT> = ({children, projects}) => {
         {children}
         <div className="projects-inner">
           {projects.map((project, i) =>
-              <div key={i} className="project" style={{backgroundImage: `url(${HOST_URL}upload/fayl/${project.uploadedFile[0].id})`}}>
+              <div key={i} className="project" style={{backgroundImage: `url(${HOST_URL}upload/fayl/${project.uploadedFile[0]?.id})`}}>
                 <div className="project-bg"></div>
                 <h3>{project.title}</h3>
                 <Link className="btn" to={`/services/${project.id}`}>Подробнее</Link>
