@@ -66,7 +66,7 @@ const ServicesPage = () => {
                 </button>
               </div>
               <div className="info-img" style={{backgroundImage: `url(${infoBg})`}}>
-                <img src={servicesInfoImg} alt=""/>
+                <img src={`${HOST_URL}upload/fayl/${service.uploadedFile[0].id}`} alt=""/>
               </div>
             </div>
             <Slider {...settings}>
