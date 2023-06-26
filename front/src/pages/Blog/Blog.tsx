@@ -107,7 +107,7 @@ const Blog = () => {
           blogs.length ? <div className="blogs-content">
           {blogs.map((blog) =>
             <div className="blog" key={blog.id}>
-              {/*<img src={`${HOST_URL}upload/fayl/${blog.uploadedFile[0].id}`} alt=""/>*/}
+              <img src={`${HOST_URL}upload/fayl/${blog.uploadedFile[0].id}`} alt=""/>
               <h2>{blog.title}</h2>
               <p className="date">{months[new Date(blog.createdAt).getMonth()]} {new Date(blog.createdAt).getDate()}, {new Date(blog.createdAt).getDate()} | <Link to="/blog">Блог</Link></p>
               <div className="more">
