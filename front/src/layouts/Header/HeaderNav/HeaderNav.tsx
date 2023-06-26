@@ -23,9 +23,6 @@ const HeaderNav = () => {
           <a href="/catalog">Каталог</a>
         </li>
         <li className='nav-item'>
-          <a href="#">Информация</a>
-        </li>
-        <li className='nav-item'>
           <Link to="/contacts">Контакты</Link>
         </li>
       </ul>
