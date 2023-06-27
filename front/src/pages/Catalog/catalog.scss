@@ -7,9 +7,13 @@
     &.catalog-left {
       top: 300px;
       left: 0;
+      animation: rotating 2s linear infinite;
+
+      
       @media screen and (max-width: 1850px) {
-        width: 80px;
+        width: 200px;
         top: 350px;
+        left: -100px;
       }
       @media screen and (max-width: 1300px) {
         width: 50px;
@@ -19,9 +23,11 @@
     &.catalog-right {
       top: 340px;
       right: 0;
+      animation: rotating 2s linear infinite;
       @media screen and (max-width: 1850px){
-        width: 100px;
+        width: 200px;
         top: 350px;
+        right: -70px;
       }
       @media screen and (max-width: 1300px) {
         width: 50px;
@@ -31,8 +37,10 @@
     &.catalog-bottom-right {
       bottom: 0;
       right: 0;
+      animation: rotating 2s linear infinite;
       @media screen and (max-width: 1850px){
-        width: 80px;
+        right: -100px;
+        width: 200px;
       }
     }
   }

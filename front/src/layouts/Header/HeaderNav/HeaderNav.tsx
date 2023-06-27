@@ -11,17 +11,18 @@ const HeaderNav = () => {
           <Link to='/'>Главная</Link>
         </li>
         <li className='nav-item'>
-          <a href="#">О компании</a>
-        </li>
-        <li className='nav-item'>
-          <Link to="/blog">Новости</Link>
+          <Link to="/about">О компании</Link>
         </li>
         <li className='nav-item'>
           <Link to='/services'>Услуги</Link>
         </li>
         <li className='nav-item'>
-          <a href="/catalog">Каталог</a>
+          <Link to="/catalog">Каталог</Link>
         </li>
+        <li className='nav-item'>
+          <Link to="/blog">Новости</Link>
+        </li>
+        
         <li className='nav-item'>
           <Link to="/contacts">Контакты</Link>
         </li>

@@ -108,12 +108,14 @@
     .contacts-left {
       position: absolute;
       top: -240px;
-      width: 80px;
-      left: 0;
+      width: 150px;
+      left: -100px;
+      animation: rotating 2s linear infinite;
+
 
       @media screen and (max-width: 1440px){
         top: -120px;
-        width: 50px
+        width: 200px
       }
       @media screen and (max-width: 768px){
         top: -80px;
@@ -121,9 +123,10 @@
     }
     .contacts-right {
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 300px;
+      bottom: 100px;
+      right: -200px;
+      width: 600px;
+      animation: rotating 2s linear infinite;
 
       @media screen and (max-width: 1300px) {
         width: 160px;

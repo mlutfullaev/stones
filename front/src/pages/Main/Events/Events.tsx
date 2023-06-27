@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import eventImg from "../../../assets/img/event.png";
 
 import './events.scss';
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -61,7 +62,7 @@ const Events = () => {
                 <div className="event-text">
                   <h3>Превратите свой дом в шедевр с мраморными <span>плитами!</span></h3>
                   <p>Наша компания предлагает широкий выбор мраморных плит для любых интерьеров</p>
-                  <button className="btn grey">Смотреть</button>
+                  <Link to='/catalog'><button className="btn grey">Смотреть</button></Link>
                 </div>
                 <img src={eventImg} alt=""/>
               </div>
@@ -71,7 +72,7 @@ const Events = () => {
                 <div className="event-text">
                   <h3>Превратите свой дом в шедевр с мраморными <span>плитами!</span></h3>
                   <p>Наша компания предлагает широкий выбор мраморных плит для любых интерьеров</p>
-                  <button className="btn grey">Смотреть</button>
+                  <Link to='/catalog'><button className="btn grey">Смотреть</button></Link>
                 </div>
                 <img src={eventImg} alt=""/>
               </div>
@@ -81,7 +82,7 @@ const Events = () => {
                 <div className="event-text">
                   <h3>Превратите свой дом в шедевр с мраморными <span>плитами!</span></h3>
                   <p>Наша компания предлагает широкий выбор мраморных плит для любых интерьеров</p>
-                  <button className="btn grey">Смотреть</button>
+                  <Link to='/catalog'><button className="btn grey">Смотреть</button></Link>
                 </div>
                 <img src={eventImg} alt=""/>
               </div>

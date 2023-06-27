@@ -1,1 +1,1 @@
-export const HOST_URL = 'http://vkamne.com:3001/'
+export const HOST_URL = 'http://45.89.190.203:3001/'

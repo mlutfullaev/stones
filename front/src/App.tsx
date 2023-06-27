@@ -12,6 +12,7 @@ import Reviews from "./pages/Reviews/Reviews";
 import Catalog from "./pages/Catalog/Catalog";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import ServicesPage from "./layouts/ServicesPage/ServicesPage";
+import About from './pages/About/About';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route element={<Blog />} path='/blog' />
         <Route element={<Reviews />} path='/reviews' />
         <Route element={<Catalog />} path='/catalog' />
+        <Route element={<About />} path='/about' />
         <Route element={<ProductPage />} path='/product/:id' />
       </Routes>
       <Footer />

@@ -8,19 +8,24 @@
     position: absolute;
   }
   .blog-left {
-    top: 50px;
+    top: 60px;
     left: 0;
+    left: -60px;
+    animation: rotating 2s linear infinite;
 
     @media screen and (max-width: 1700px) {
-      width: 100px;
+      width: 200px;
     }
   }
   .blog-right {
     bottom: 0;
     right: 0;
 
+    animation: rotating 2s linear infinite;
+
     @media screen and (max-width: 1700px) {
-      width: 100px;
+      right: -60px;
+      width: 200px;
     }
     @media screen and (max-width: 1150px) {
       width: 70px;

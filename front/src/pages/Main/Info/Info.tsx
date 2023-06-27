@@ -2,8 +2,10 @@ import React, {useRef, useState} from 'react';
 import Slider from "react-slick";
 import infoBg from "../../../assets/img/info/infobg.png";
 import info1 from "../../../assets/img/info/info.png";
+import info2 from "../../../assets/img/info/info1.png";
 
 import './info.scss';
+import { Link } from 'react-router-dom';
 
 const Info = () => {
   const infoSlides = [info1, info1, info1]
@@ -27,6 +29,7 @@ const Info = () => {
           только
           высококачественные материалы и инструменты для восстановления камня в его первоначальное состояние.
         </p>
+        <Link to="/catalog">
         <button className="btn black">Подробнее
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
             <path
@@ -34,17 +37,18 @@ const Info = () => {
               fill="black" fillOpacity="0.73"/>
           </svg>
         </button>
+        </Link>
       </div>
       <div className="info-slide">
         <Slider ref={infoSlideRef} {...infoSettings} beforeChange={index => setInfoSlide(index + 1)}>
           <div className="info-img">
-            <img src={info1} alt=""/>
+            <img src={info2} style={{minHeight: "380px"}} alt=""/>
           </div>
           <div className="info-img">
-            <img src={info1} alt=""/>
+            <img src={info1} style={{minHeight: "380px"}} alt=""/>
           </div>
           <div className="info-img">
-            <img src={info1} alt=""/>
+            <img src={info1} style={{minHeight: "380px"}} alt=""/>
           </div>
         </Slider>
         <div className="slider-bottom">

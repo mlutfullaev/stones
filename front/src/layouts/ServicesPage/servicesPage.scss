@@ -5,11 +5,14 @@
     position: absolute;
     top: 120px;
     left: 0;
-    width: 150px;
+    width: 200px;
+    animation: rotating 2s linear infinite;
 
+    
     @media screen and (max-width: 1850px){
-      width: 100px;
+      width: 200px;
       top: 100px;
+      left: -100px;
     }
     @media screen and (max-width: 768px){
       width: 70px;
@@ -20,15 +23,19 @@
     right: 0;
     top: 120px;
     width: 150px;
+    animation: rotating 2s linear infinite;
 
     @media screen and (max-width: 1850px){
-      width: 100px;
+      width: 200px;
+      right: -80px;
       top: 100px;
     }
     @media screen and (max-width: 768px){
       width: 70px;
     }
   }
+
+
 
   header {
     color: #fff;
@@ -236,10 +243,12 @@
     > img {
       top: -300px;
       position: absolute;
-      left: 0;
+      left: -90px;
+      animation: rotating 2s linear infinite;
+
 
       @media screen and (max-width: 1650px) {
-        width: 130px;
+        width: 200px;
       }
       @media screen and (max-width: 768px) {
         width: 100px;
@@ -257,7 +266,9 @@
     > img:first-child {
       position: absolute;
       top: 0;
-      right: 0;
+      right: -60px;
+      animation: rotating 2s linear infinite;
+
 
       @media screen and (max-width: 2000px) {
         width: 170px;
@@ -269,7 +280,9 @@
     > img:nth-child(2) {
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: -60px;
+      animation: rotating 2s linear infinite;
+
 
       @media screen and (max-width: 2000px) {
         width: 180px;
