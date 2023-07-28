@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import logoWhite from "../../assets/img/logo-white.svg";
-import logoGrey from "../../assets/img/logo-grey.svg";
+import logoWhite from "https://vkamne.com/static/media/logo-white.svg";
+import logoGrey from "https://vkamne.com/static/media/logo-grey.svg";
 
 import "./header.scss";
 import HeaderNav from "./HeaderNav/HeaderNav";

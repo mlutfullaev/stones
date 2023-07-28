@@ -16,7 +16,7 @@ const Projects: React.FC<ProjectsT> = ({children, projects}) => {
     <section className='projects'>
       <div className="container">
         {children}
-        {/* <div className="projects-inner">
+        <div className="projects-inner">
           {projects.map((project, i) =>
               <div key={i} className="project" style={{backgroundImage: `url(${HOST_URL}upload/fayl/${project.uploadedFile[0]?.id})`}}>
                 <div className="project-bg"></div>
@@ -24,7 +24,7 @@ const Projects: React.FC<ProjectsT> = ({children, projects}) => {
                 <Link className="btn" to={`/services/${project.id}`}>Подробнее</Link>
             </div>
           )}
-        </div> */}
+        </div>
       </div>
     </section>
   );
