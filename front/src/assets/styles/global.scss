@@ -1,0 +1,142 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  &.menu-active {
+    overflow: hidden;
+  }
+}
+#root > div:first-child {
+  min-height: 79.7vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: .3s;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+button, a {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+
+  &.btn {
+    position: relative;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 12px 42px 22px 32px;
+
+
+    @media screen and (max-width: 1440px){
+      font-size: 20px;
+    }
+    svg {
+      padding-left: 10px;
+      width: 30px;
+    }
+    &:after {
+      content: '';
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+    &.black {
+      border-color: #000000;
+      color: #000;
+
+      &:after {
+        border-color: #000000;
+      }
+    }
+    &.grey {
+      color: #fff;
+      border: none;
+      background: #444;
+    }
+    &.grey-outline {
+      border-color: #444444;
+      color: #444444;
+
+      &:after {
+        border-color: #444;
+      }
+    }
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1660px;
+  padding: 0 20px;
+
+  @media screen and (max-width: 1850px) {
+    max-width: 1400px;
+  }
+  @media screen and (max-width: 1440px) {
+    max-width: 1230px;
+  }
+  @media screen and (max-width: 1300px) {
+    max-width: 1050px;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 0px;
+  }
+  
+}
+.title {
+  font-size: 45px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  text-transform: capitalize;
+
+  span {
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 1440px) {
+    font-size: 34px;
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 28px;
+  }
+}
+.text {
+  font-size: 19px;
+  font-weight: 500;
+
+  @media screen and (max-width: 1440px){
+    font-size: 15px;
+  }
+}
+.date {
+  font-size: 16px;
+  color: #2E303D70;
+  padding: 0;
+
+  @media screen and (max-width: 780px) {
+    font-size: 15px;
+  }
+}
+.grey-text {
+  color: rgba(46, 48, 61, 0.72);
+  text-align: center;
+  font-size: 19px;
+}

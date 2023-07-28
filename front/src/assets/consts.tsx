@@ -1,0 +1,1 @@
+export const HOST_URL = 'https://vkamne.com:3001/'

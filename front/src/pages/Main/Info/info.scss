@@ -1,0 +1,110 @@
+.main .info {
+  background-size: 45%;
+  background-position: left;
+  background-repeat: no-repeat;
+  margin: 100px 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  @media screen and (max-width: 1200px) {
+    gap: 30px
+  }
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
+  &-text {
+    padding: 20px 0 20px 100px;
+
+    @media screen and (max-width: 1200px) {
+      padding: 20px 0 20px 40px;
+    }
+    @media screen and (max-width: 1000px) {
+      padding: 20px 20px 40px;
+    }
+    .text {
+      padding: 20px 0;
+    }
+  }
+  &-slide {
+    position: relative;
+
+    .slick-slider {
+      width: 900px;
+
+      @media screen and (max-width: 1850px) {
+        width: 700px;
+      }
+      @media screen and (max-width: 1440px) {
+        width: 600px;
+      }
+      @media screen and (max-width: 1200px) {
+        width: 450px;
+      }
+      @media screen and (max-width: 1000px) {
+        width: 600px
+      }
+      @media screen and (max-width: 650px) {
+        width: 400px
+      }
+      @media screen and (max-width: 470px) {
+        max-width: 300px;
+      }
+
+      .slick-list {
+        padding: 0 80px 0 0 !important;
+
+        @media screen and (max-width: 1440px) {
+          padding: 0 30px 0 0 !important;
+        }
+      }
+
+      @media screen and (max-width: 1850px) {
+        .slick-slide img {
+          width: 250px;
+        }
+      }
+      @media screen and (max-width: 1440px) {
+        .slick-slide img {
+          width: 230px;
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        .slick-slide img {
+          width: 160px;
+        }
+      }
+      @media screen and (max-width: 1000px) {
+        .slick-slide img {
+          width: 220px;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        .slick-slide img {
+          width: 140px;
+        }
+      }
+      @media screen and (max-width: 470px) {
+        .slick-slide img {
+          width: 90%;
+        }
+      }
+    }
+    .slider-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      p {
+        font-size: 25px;
+        font-weight: 600;
+        span {
+          color: #ccc;
+        }
+      }
+    }
+  }
+}

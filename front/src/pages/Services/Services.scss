@@ -1,0 +1,21 @@
+.swiper {
+  width: 100%;
+}
+
+.modal_eksteryer {
+  background-color: transparent !important;
+  svg {
+    right: -45px;
+  }
+}
+
+
+.modal {
+  z-index: 999999999999 !important;
+}
+
+@media (max-width: 650px) {
+  .modal_content {
+    max-width: 50%;
+  }
+}

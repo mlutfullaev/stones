@@ -1,0 +1,24 @@
+header {
+  color: #000;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+    .logo img {
+      @media screen and (max-width: 1850px){
+        width: 150px;
+      }
+    }
+  }
+  button {
+    color: inherit;
+  }
+}

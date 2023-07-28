@@ -1,0 +1,154 @@
+.main {
+  position: relative;
+
+  .main-bg {
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .slick-vertical .slick-slide {
+      border: none;
+    }
+
+    .slick-dots {
+      right: 10px;
+      top: 50%;
+      bottom: auto;
+      display: flex !important;
+      flex-direction: column;
+      width: auto;
+
+      li {
+        z-index: 4;
+        button {
+          opacity: 1;
+          border: 1px solid #fff;
+          background: #fff;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        &.slick-active button {
+          background: transparent;
+        }
+      }
+    }
+
+    .main-slide {
+      width: 100%;
+      height: 100vh;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      div {
+        width: 100%;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  header {
+    color: #fff;
+    z-index: 3;
+    position: relative;
+  }
+
+  main {
+    position: relative;
+    height: calc(100vh - 110px);
+    display: flex;
+    align-items: end;
+
+    .main-title {
+      color: #fff;
+      font-weight: 600;
+      font-size: 40px;
+      padding-bottom: 40px;
+
+      @media screen and (max-width: 1850px){
+        font-size: 32px;
+        padding-bottom: 20px;
+      }
+    }
+    .main-arrow {
+      margin-top: 30px;
+      width: 100%;
+      text-align: center;
+
+      svg {
+
+        @media screen and (max-width: 1850px){
+          width: 35px;
+        }
+      }
+    }
+  }
+
+  .main-bottom {
+    padding: 100px 0 50px;
+    position: relative;
+
+    & > img {
+      position: absolute;
+      right: -100px;
+      top: -50px;
+      width: 200px;
+      animation: rotating 5s linear infinite;
+
+      @media screen and (max-width: 1024px){
+        width: 150px;
+      }
+      @media screen and (max-width: 768px){
+        width: 120px;
+        top: -70px;
+      }
+    }
+    .inner {
+      padding: 50px 0 30px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 850px){
+        flex-direction: column-reverse;
+      }
+
+      .video {
+        width: 100%;
+        max-width: 900px;
+        background: #fff;
+        box-shadow: 0 3px 30px rgba(0, 0, 0, .3);
+        height: 450px;
+
+        @media screen and (max-width: 1850px){
+          height: 400px;
+        }
+        @media screen and (max-width: 1440px){
+          max-width: 600px;
+          height: 300px;
+        }
+        @media screen and (max-width: 550px){
+          height: 200px;
+        }
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

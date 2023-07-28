@@ -1,0 +1,73 @@
+.main .advantages {
+  padding: 50px 0 70px;
+  position: relative;
+
+  & > img {
+    position: absolute;
+    left: -100px;
+    top: -120px;
+    width: 180px;
+    animation: rotating 5s linear infinite;
+
+    @media screen and (max-width: 1400px){
+      top: -100px;
+      width: 120px;
+    }
+    @media screen and (max-width: 768px){
+      top: -140px;
+    }
+  }
+  .advantages-inner {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @media screen and (max-width: 1024px){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 650px){
+      grid-template-columns: 1fr;
+    }
+    .advantage {
+      background: #FFFFFF;
+      box-shadow: 0 4px 64px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 30px;
+
+      @media screen and (max-width: 1440px){
+        padding: 20px;
+
+        img {
+          height: 60px;
+          margin-bottom: 10px;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        padding: 10px;
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 35px;
+        color: #444444;
+
+        @media screen and (max-width: 1440px){
+          font-size: 28px;
+        }
+        @media screen and (max-width: 768px){
+          font-size: 24px;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 19px;
+        color: #000000;
+
+        @media screen and (max-width: 1440px){
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
